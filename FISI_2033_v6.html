@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>FISI • Plan de Estudios 2033 · UPB Bucaramanga</title>
+<style>
+/* ── BASE ── */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
+  background:linear-gradient(135deg,#667eea 0,#764ba2 100%);
+  min-height:100vh;padding:20px;
+}
+.container{
+  max-width:1600px;margin:0 auto;background:#fff;
+  border-radius:20px;padding:30px;
+  box-shadow:0 20px 40px rgba(0,0,0,.1);
+}
+
+/* ── HEADER ── */
+.header{text-align:center;margin-bottom:28px}
+.header h1{color:#2c3e50;margin:.2rem 0;font-size:2.2rem}
+.header p{color:#7f8c8d;margin:0}
+.header .sub{color:#95a5a6;font-size:.95rem;margin-top:4px}
+.upb-path-badge{
+  display:inline-block;background:#e8f5e9;color:#2e7d32;
+  border:2px solid #4caf50;border-radius:20px;
+  padding:6px 16px;font-weight:700;font-size:.9rem;margin-top:8px;
+}
+
+/* ── CREDITS SUMMARY ── */
+.credits-summary{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:16px;margin:20px 0;
+}
+.credit-card{
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  color:#fff;padding:20px;border-radius:15px;
+  text-align:center;box-shadow:0 8px 16px rgba(0,0,0,.15);
+}
+.credit-card h4{font-size:1rem;margin:0 0 8px;opacity:.9}
+.credit-card .number{font-size:2.5rem;font-weight:700;margin:8px 0}
+.credit-card .label{font-size:.85rem;opacity:.9}
+
+/* ── NAV ── */
+.section-nav{
+  display:flex;justify-content:center;gap:12px;
+  margin:22px 0 28px;flex-wrap:wrap;
+}
+.nav-button{
+  padding:10px 22px;border:none;border-radius:24px;
+  cursor:pointer;font-weight:700;transition:.25s;
+  font-size:.98rem;color:#fff;
+}
+.nav-button.active{outline:3px solid rgba(0,0,0,.08);transform:translateY(-1px)}
+.nav-plan{background:linear-gradient(135deg,#2ecc71,#27ae60)}
+.nav-minors{background:linear-gradient(135deg,#f39c12,#e67e22)}
+.nav-certs{background:linear-gradient(135deg,#00bcd4,#0097a7)}
+.nav-practica{background:linear-gradient(135deg,#e74c3c,#c0392b)}
+.nav-ciclo{background:linear-gradient(135deg,#9b59b6,#8e44ad)}
+
+/* ── SECTIONS ── */
+.program-section{display:none;animation:fade .25s ease}
+.program-section.active{display:block}
+@keyframes fade{from{opacity:.6;transform:translateY(4px)}to{opacity:1;transform:none}}
+.section-title{text-align:center;font-size:1.6rem;color:#2c3e50;margin:0 0 18px}
+
+/* ── INFO BOXES ── */
+.info-box{background:#e3f2fd;border-left:4px solid #2196f3;padding:16px;border-radius:10px;margin:20px 0}
+.info-box h4{color:#1976d2;margin:0 0 10px;font-size:1.1rem}
+.info-box p{color:#333;margin:6px 0;line-height:1.6}
+.warning-box{background:#fff3e0;border-left:4px solid #ff9800}
+.warning-box h4{color:#f57c00}
+.success-box{background:#e8f5e9;border-left:4px solid #4caf50}
+.success-box h4{color:#2e7d32}
+.note-box{background:#f3e5f5;border-left:4px solid #9c27b0}
+.note-box h4{color:#6a1b9a}
+
+/* ── SEMESTER GRID ── */
+.semesters-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.semesters-grid.single-column{grid-template-columns:1fr}
+.semesters-grid.triple{grid-template-columns:repeat(3,1fr)}
+
+/* Trio wrapper: agrupa los 3 semestres de cada ciclo */
+.trio-group{
+  border-radius:16px;padding:22px;margin:18px 0;
+  position:relative;
+}
+.trio-group::before{
+  content:attr(data-label);
+  position:absolute;top:-13px;left:24px;
+  background:#fff;padding:2px 14px;
+  font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:20px;border:2px solid;
+}
+.trio-tp{background:rgba(155,89,182,.07);border:2px solid rgba(155,89,182,.2)}
+.trio-tp::before{color:#9b59b6;border-color:#9b59b6}
+.trio-tec{background:rgba(41,128,185,.07);border:2px solid rgba(41,128,185,.2)}
+.trio-tec::before{color:#2980b9;border-color:#2980b9}
+
+/* Cards hijos de trio: igualan altura full */
+.trio-group .semester-detail-card{
+  display:flex;flex-direction:column;height:100%;
+}
+.trio-group .semester-detail-card .subjects-list{
+  flex:1;
+}
+@media(max-width:1300px){
+  .semesters-grid{grid-template-columns:repeat(2,1fr)}
+  .semesters-grid.single-column{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .semesters-grid{grid-template-columns:1fr}
+  .trio-group{padding:14px}
+}
+
+/* ── SEMESTER CARD ── */
+.semester-detail-card{
+  background:#fff;border-radius:14px;padding:16px 18px;
+  box-shadow:0 8px 24px rgba(0,0,0,.08);border-top:4px solid;
+}
+.c-tp{border-top-color:#9b59b6}
+.c-tec{border-top-color:#2980b9}
+.c-ing{border-top-color:#27ae60}
+.c-minor{border-top-color:#f39c12}
+.c-cert{border-top-color:#00bcd4}
+.c-prac{border-top-color:#e74c3c}
+.semester-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.semester-title{font-size:1.08rem;color:#2c3e50;margin:0}
+.credit-badge{background:#34495e;color:#fff;padding:4px 10px;border-radius:14px;font-size:.78rem;font-weight:700}
+
+/* ── SUBJECT LIST ── */
+.subjects-list{list-style:none;padding:0;margin:0}
+.subject-item{
+  background:#f8f9fa;margin:10px 0;padding:12px;
+  border-radius:10px;border-left:3px solid #bdc3c7;
+}
+.subject-name{
+  display:flex;justify-content:space-between;gap:10px;
+  color:#2c3e50;font-weight:700;font-size:.87rem;
+}
+.subject-credits{
+  background:#e74c3c;color:#fff;padding:2px 8px;
+  border-radius:12px;font-size:.74rem;white-space:nowrap;flex-shrink:0;
+}
+.subject-description{color:#6b7b86;font-size:.80rem;margin-top:5px;line-height:1.45}
+
+/* Item variants */
+.si-abet{background:linear-gradient(135deg,#fff8f0,#fff3e8);border-left-color:#e67e22}
+.si-cbfh{background:linear-gradient(135deg,#fdf2e9,#fcf4ff);border-left-color:#9b59b6}
+.si-integ{background:linear-gradient(135deg,#e8f5e8,#f0f8f0);border-left-color:#2ecc71}
+.si-web{background:linear-gradient(135deg,#fffff0,#fffde8);border-left-color:#f1c40f}
+
+/* ── BADGES ── */
+.badge{
+  display:inline-block;background:#eef3ff;color:#1b3ea1;
+  border:1px solid #cdd9ff;border-radius:10px;
+  padding:2px 8px;font-size:.8rem;font-weight:700;margin-right:6px;
+}
+.badge-green{background:#e8f5e9;color:#2e7d32;border-color:#81c784}
+.badge-red{background:#ffebee;color:#c62828;border-color:#ef5350}
+.badge-purple{background:#f3e5f5;color:#6a1b9a;border-color:#ce93d8}
+.badge-orange{background:#fff3e0;color:#e65100;border-color:#ffb74d}
+.note-text{font-size:.88rem;color:#7f8c8d;text-align:center;margin-top:6px}
+
+/* cycle pills inline */
+.pill{
+  display:inline-block;padding:2px 8px;border-radius:10px;
+  font-size:.73rem;font-weight:700;color:#fff;margin-left:4px;
+  vertical-align:middle;
+}
+.p-tp{background:#9b59b6}
+.p-tec{background:#2980b9}
+.p-ing{background:#27ae60}
+
+/* ── CYCLE BANNERS ── */
+.cycle-banner{
+  border-radius:10px;padding:14px 18px;
+  margin:10px 0 18px;border-left:5px solid;
+  display:flex;align-items:flex-start;gap:14px;
+}
+.cb-tp{background:#f5eeff;border-color:#9b59b6;color:#6a0dad}
+.cb-tec{background:#e8f4fd;border-color:#2980b9;color:#1a5276}
+.cb-ing{background:#e8f8f0;border-color:#27ae60;color:#145a32}
+.cycle-banner .icon{font-size:1.6rem;flex-shrink:0;margin-top:2px}
+.cycle-banner h4{font-size:1rem;font-weight:700;margin:0 0 4px}
+.cycle-banner p{font-size:.85rem;margin:0;line-height:1.55}
+.cycle-banner .note{font-size:.79rem;margin-top:5px;opacity:.9}
+
+/* ── CUTLINE ── */
+.cutline{
+  text-align:center;padding:14px 20px;border-radius:10px;
+  border:2px dashed;margin:6px 0 22px;
+}
+.cl-tp{border-color:#9b59b6;color:#6a0dad;background:#f9f2ff}
+.cl-tec{border-color:#2980b9;color:#1a5276;background:#f0f7ff}
+.cutline h4{font-size:.95rem;font-weight:700;margin-bottom:4px}
+.cutline p{font-size:.82rem;margin:0;opacity:.85}
+
+/* ── MINOR TABS ── */
+.minors-tabs{
+  display:flex;gap:10px;flex-wrap:wrap;
+  justify-content:center;margin:14px 0 16px;
+}
+.minor-tab{
+  padding:8px 16px;border-radius:18px;
+  border:2px solid #f39c12;background:#fff;
+  color:#e67e22;font-weight:700;cursor:pointer;
+  transition:.2s;font-family:inherit;font-size:.93rem;
+}
+.minor-tab:hover{background:#fef9ef}
+.minor-tab.active{background:#e67e22;color:#fff;border-color:#e67e22}
+.minor-pane{display:none}
+.minor-pane.active{display:block}
+.minor-note{
+  background:#fff8e1;border-left:3px solid #f39c12;
+  border-radius:6px;padding:10px 14px;
+  margin:10px 16px 12px;font-size:.83rem;color:#7f5e00;line-height:1.5;
+}
+
+/* ── CERT GRID ── */
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:16px}
+@media(max-width:1100px){.cert-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:660px){.cert-grid{grid-template-columns:1fr}}
+.cert-new-ribbon{
+  background:#e74c3c;color:#fff;font-size:.68rem;font-weight:700;
+  padding:3px 10px;border-radius:0 0 8px 8px;
+  display:inline-block;margin-bottom:6px;letter-spacing:.04em;text-transform:uppercase;
+}
+
+/* ── CICLO TIMELINE ── */
+.ciclo-timeline{
+  display:flex;border-radius:14px;overflow:hidden;
+  box-shadow:0 8px 24px rgba(0,0,0,.12);margin:20px 0;
+}
+.cphase{flex:1;padding:24px 16px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:5px}
+.cphase-arr{
+  background:#e8eaed;display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;color:#aaa;flex:0 0 28px;
+}
+.cphase-num{font-size:2.2rem;font-weight:700;line-height:1}
+.cphase h4{font-size:.85rem;font-weight:700;line-height:1.3;margin:0}
+.cphase-sub{font-size:.73rem;opacity:.8;line-height:1.5}
+.cphase-ref{font-size:.67rem;opacity:.65;font-style:italic;margin-top:3px}
+.ph-tp{background:linear-gradient(160deg,#5b1d8a,#8e44ad);color:#fff}
+.ph-tec{background:linear-gradient(160deg,#1a5276,#2980b9);color:#fff}
+.ph-ing{background:linear-gradient(160deg,#0e5c2f,#27ae60);color:#fff}
+@media(max-width:660px){.ciclo-timeline{flex-direction:column}.cphase-arr{display:none}}
+
+/* ── COMP GRID ── */
+.comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0}
+@media(max-width:900px){.comp-grid{grid-template-columns:1fr}}
+.comp-card{border-radius:12px;padding:18px;border-top:4px solid}
+.cc-tp{border-top-color:#9b59b6;background:#f9f2ff}
+.cc-tec{border-top-color:#2980b9;background:#eaf2fb}
+.cc-ing{border-top-color:#27ae60;background:#e9f7ef}
+.comp-card h4{font-size:.95rem;font-weight:700;color:#2c3e50;margin:0 0 2px}
+.comp-card .cc-sub{font-size:.74rem;color:#7f8c8d;margin-bottom:10px;display:block}
+.comp-card ul{padding-left:16px;margin:0;font-size:.83rem;color:#2c3e50;line-height:1.75}
+.comp-badge{
+  display:inline-block;padding:3px 12px;border-radius:12px;
+  font-weight:700;font-size:.78rem;margin-top:10px;color:#fff;
+}
+
+/* ── CICLO TABLE ── */
+.ciclo-tbl{width:100%;border-collapse:collapse;font-size:.83rem;border-radius:10px;overflow:hidden;margin-top:14px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.ciclo-tbl th{background:#34495e;color:#fff;padding:9px 14px;text-align:left;font-weight:700;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase}
+.ciclo-tbl td{padding:8px 14px;border-bottom:1px solid #ecf0f1;vertical-align:top;color:#2c3e50}
+.ciclo-tbl tr:nth-child(even) td{background:#f9f9f9}
+.cut-tp td{background:#f5eeff!important;color:#6a0dad!important;font-weight:700;text-align:center;padding:10px}
+.cut-tec td{background:#e8f4fd!important;color:#1a5276!important;font-weight:700;text-align:center;padding:10px}
+.cut-ing td{background:#e8f8f0!important;color:#145a32!important;font-weight:700;text-align:center;padding:10px}
+
+/* ── LEGAL BOX ── */
+.legal-box{
+  background:#2c3e50;border-radius:12px;
+  padding:22px 26px;margin:22px 0;color:#ecf0f1;
+}
+.legal-box h3{color:#f39c12;margin:0 0 12px;font-size:1.05rem}
+.legal-box p{font-size:.86rem;line-height:1.7;margin-bottom:5px}
+.legal-box strong{color:#f39c12}
+.law-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.law-tag{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);padding:4px 12px;border-radius:6px;font-size:.78rem;color:rgba(255,255,255,.7)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .credits-summary{grid-template-columns:1fr}
+  .header h1{font-size:1.8rem}
+  .section-nav{gap:8px}
+  .nav-button{padding:8px 14px;font-size:.88rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ── HEADER ── -->
+  <div class="header">
+    <h1>Ingeniería de Sistemas e Informática</h1>
+    <p>Plan de Estudios 2033 • Facultad de Ingeniería • UPB Seccional Bucaramanga</p>
+    <p class="sub">SNIES 102907 • Modalidad presencial • Registro Calificado MEN • Candidato: ABET EAC y Propedéutico Frendly</p>
+  </div>
+
+  <!-- ── CREDITS SUMMARY ── -->
+  <div class="credits-summary">
+    <div class="credit-card" style="background:linear-gradient(135deg,#9b59b6,#8e44ad)">
+      <h4>Ciclo Técnico</h4>
+      <div class="number">51</div>
+      <div class="label">créditos · S1–S3</div>
+    </div>
+    <div class="credit-card" style="background:linear-gradient(135deg,#2980b9,#1a5276)">
+      <h4>Ciclo Tecnólogo</h4>
+      <div class="number">107</div>
+      <div class="label">créditos · S1–S6</div>
+    </div>
+	<div class="credit-card" style="background:linear-gradient(135deg,#f39c12,#d68910)">
+      <h4>Minor + Capstone + Prac. Profesional</h4>
+      <div class="number">19+7</div>
+      <div class="label">25 créditos · S.7-8</div>
+    </div>
+    <div class="credit-card" style="background:linear-gradient(135deg,#27ae60,#1e8449)">
+      <h4>Total Programa</h4>
+      <div class="number">133</div>
+      <div class="label">créditos · 8 semestres</div>
+    </div>
+    <div class="credit-card" style="background:linear-gradient(135deg,#e67e22,#ca6f1e)">
+      <h4>Ciencias Básicas ABET</h4>
+      <div class="number">33</div>
+      <div class="label">créditos ≥ 30 req.</div>
+    </div>
+    <div class="credit-card" style="background:linear-gradient(135deg,#8e44ad,#6c3483)">
+      <h4>Formación Humanista</h4>
+      <div class="number">10</div>
+      <div class="label">créditos CBFH</div>
+    </div>
+  </div>
+
+<!-- ── NAV ── -->
+  <div class="section-nav">
+    <button class="nav-button nav-plan active" data-section="plan">📚 Plan de Estudios (S1–S6)</button>
+    <button class="nav-button nav-minors" data-section="minors">🔬 Minors + Capstone (S7)</button>
+    <button class="nav-button nav-practica" data-section="practica">💼 Práctica Profesional (S8)</button>
+	<button class="nav-button nav-certs" data-section="certs">🏆 Certificaciones UPBpath</button>
+    <button class="nav-button nav-ciclo" data-section="ciclo">🎓 Ciclo Propedéutico</button>
+  </div>
+
+  <!-- ═══════════════════════════ PLAN DE ESTUDIOS ═══════════════════════════ -->
+  <section class="program-section active" id="plan">
+    <h2 class="section-title">Plan de Estudios • Semestres 1 a 6 • 107 Créditos</h2>
+
+    <div class="info-box">
+      <h4>🏅 Verificación ABET EAC — Ciencias Básicas (Criterion 5)</h4>
+      <p><strong>Matemáticas · Cálculo (9 cr):</strong> Cálculo Diferencial (S1) · Cálculo Integral (S2) · Cálculo Vectorial (S3)</p>
+      <p><strong>Matemáticas · Otras (10 cr):</strong> Álgebra Lineal (S2) · Matemáticas Discretas (S2) · Estadística 4 cr (S3)</p>
+      <p><strong>Ciencias Físicas (4 cr):</strong> Física Mecánica y Computacional (S3)</p>
+      <p><strong>Ciencias de la Computación (10 cr):</strong> Algoritmia y Programación (S1) · Estructuras de Datos soportadas en Web (S3) · Análisis y Diseño de Algoritmos (S5)</p>
+      <p style="font-weight:700;color:#1976d2;margin-top:8px">TOTAL: 33 créditos ≥ 30 requeridos ✅ — Supera el mínimo ABET en 3 créditos</p>
+    </div>
+
+    <!-- LEYENDA -->
+    <p style="margin:0 0 14px;font-size:.88rem;color:#555">
+      <span style="background:#fff8f0;border:1px solid #e67e22;border-radius:6px;padding:2px 8px;margin-right:6px;font-weight:600;font-size:.8rem">Naranja</span> Ciencias Básicas ABET &nbsp;·&nbsp;
+      <span style="background:#f9f2ff;border:1px solid #9b59b6;border-radius:6px;padding:2px 8px;margin-right:6px;font-weight:600;font-size:.8rem">Violeta</span> Formación Humanista CBFH &nbsp;·&nbsp;
+      <span style="background:#e8f5e8;border:1px solid #2ecc71;border-radius:6px;padding:2px 8px;margin-right:6px;font-weight:600;font-size:.8rem">Verde</span> Proyecto Integrador &nbsp;·&nbsp;
+      <span style="background:#fffff0;border:1px solid #f1c40f;border-radius:6px;padding:2px 8px;font-weight:600;font-size:.8rem">Amarillo</span> Disciplinar Web
+    </p>
+
+    <!-- CICLO TÉCNICO -->
+    <div class="cycle-banner cb-tp">
+      <div class="icon">🎓</div>
+      <div>
+        <h4>CICLO TÉCNICO PROFESIONAL — Semestres 1 · 2 · 3</h4>
+        <p>51 créditos acumulados · Ley 749/2002 · Título: <strong>Técnico Profesional en Desarrollo de Software</strong></p>
+        <p class="note">📌 El Proyecto de Aula en Estructuras de Datos (S3) es la experiencia integradora que acompaña la solicitud de este título.</p>
+      </div>
+    </div>
+
+    <div class="trio-group trio-tp" data-label="Ciclo Técnico Profesional · S1 · S2 · S3">
+    <div class="semesters-grid">
+      <!-- S1 -->
+      <article class="semester-detail-card c-tp">
+        <div class="semester-header">
+          <h3 class="semester-title">Semestre 1 <span class="pill p-tp">T.P.</span></h3>
+          <span class="credit-badge">15 créditos</span>
+        </div>
+        <ul class="subjects-list">
+          <li class="subject-item si-abet">
+            <div class="subject-name">Cálculo Diferencial <span class="subject-credits">3</span></div>
+            <div class="subject-description">Límites, derivadas, optimización de funciones y modelamiento matemático. Base ABET.</div>
+          </li>
+          <li class="subject-item si-abet">
+            <div class="subject-name">Algoritmia y Programación <span class="subject-credits">4</span></div>
+            <div class="subject-description">Fundamentos de algoritmos, estructuras de control y funciones en lenguaje de alto nivel. Base ABET Ciencias de la Computación.</div>
+          </li>
+          <li class="subject-item">
+            <div class="subject-name">Taller de Ingeniería en Sistemas e Informática <span class="subject-credits">2</span></div>
+            <div class="subject-description">Ecosistema TI, roles profesionales y resolución de problemas de ingeniería.</div>
+          </li>
+          <li class="subject-item">
+            <div class="subject-name">Pensamiento Sistémico <span class="subject-credits">3</span></div>
+            <div class="subject-description">Sistemas complejos, modelado causal y análisis de sistemas sociotécnicos.</div>
+          </li>
+          <li class="subject-item si-cbfh">
+            <div class="subject-name">Humanismo y Cultura Ciudadana <span class="subject-credits">2</span></div>
+            <div class="subject-description">Formación humanística integral, pensamiento crítico y participación ciudadana. CBFH.</div>
+          </li>
+          <li class="subject-item si-cbfh">
+            <div class="subject-name">Ética General <span class="subject-credits">1</span></div>
+            <div class="subject-description">Fundamentos éticos, dilemas morales y desarrollo del juicio moral. CBFH.</div>
+          </li>
+        </ul>
+      </article>
+
+      <!-- S2 -->
+      <article class="semester-detail-card c-tp">
+        <div class="semester-header">
+          <h3 class="semester-title">Semestre 2 <span class="pill p-tp">T.P.</span></h3>
+          <span class="credit-badge">17 créditos</span>
+        </div>
+        <ul class="subjects-list">
+          <li class="subject-item si-abet">
+            <div class="subject-name">Cálculo Integral <span class="subject-credits">3</span></div>
+            <div class="subject-description">Integrales definidas, técnicas de integración y aplicaciones. Base ABET.</div>
+          </li>
+          <li class="subject-item si-abet">
+            <div class="subject-name">Álgebra Lineal <span class="subject-credits">3</span></div>
+            <div class="subject-description">Matrices, vectores, sistemas de ecuaciones y aplicaciones en computación. Base ABET.</div>
+          </li>
+          <li class="subject-item si-abet">
+            <div class="subject-name">Matemáticas Discretas <span class="subject-credits">3</span></div>
+            <div class="subject-description">Lógica proposicional, teoría de conjuntos, grafos y combinatoria. Base ABET.</div>
+          </li>
+          <li class="subject-item si-web">
+            <div class="subject-name">Programación Orientada a Objetos basada en Web <span class="subject-credits">3</span></div>
+            <div class="subject-description">OOP (herencia, polimorfismo, encapsulamiento) con DOM, componentes de interfaz y patrones MVC como contexto de práctica.</div>
+          </li>
+          <li class="subject-item">
+            <div class="subject-name">Análisis y Diseño de Sistemas <span class="subject-credits">3</span></div>
+            <div class="subject-description">Modelado UML, levantamiento de requisitos, casos de uso y arquitectura lógica.</div>
+          </li>
+          <li class="subject-item si-cbfh">
+            <div class="subject-name">Cristología Básica <span class="subject-credits">2</span></div>
+            <div class="subject-description">Fundamentos de la fe cristiana y valores institucionales bolivarianos. CBFH.</div>
+          </li>
+        </ul>
+      </article>
+
+      <!-- S3 -->
+      <article class="semester-detail-card c-tp">
+        <div class="semester-header">
+          <h3 class="semester-title">Semestre 3 <span class="pill p-tp">T.P.</span></h3>
+          <span class="credit-badge">19 créditos</span>
+        </div>
+        <ul class="subjects-list">
+          <li class="subject-item si-abet">
+            <div class="subject-name">Cálculo Vectorial <span class="subject-credits">3</span></div>
+            <div class="subject-description">Funciones vectoriales, gradiente, divergencia, rotacional. Benchmark Uniandes · Javeriana Bogotá (ABET).</div>
+          </li>
+          <li class="subject-item si-abet">
+            <div class="subject-name">Física Mecánica y Computacional <span class="subject-credits">4</span></div>
+            <div class="subject-description">Mecánica clásica, dinámica, energía. Lab de simulación computacional (1 cr lab incluido). Base ABET Ciencias Físicas.</div>
+          </li>
+          <li class="subject-item si-abet">
+            <div class="subject-name">Estadística Descriptiva e Inferencial <span class="subject-credits">4</span></div>
+            <div class="subject-description">Probabilidad, distribuciones, pruebas de hipótesis, regresión y estadística computacional R/Python. Base ABET.</div>
+          </li>
+          <li class="subject-item si-web">
+            <div class="subject-name">Estructuras de Datos soportadas en Web <span class="subject-credits">3</span></div>
+            <div class="subject-description">Listas, árboles, grafos, colas. Virtual DOM, estado reactivo y colas de eventos como contextos. Base ABET CS.</div>
+          </li>
+          <li class="subject-item">
+            <div class="subject-name">Bases de Datos <span class="subject-credits">3</span></div>
+            <div class="subject-description">Modelo relacional, SQL (DML/DDL/DCL), normalización 1FN–BCNF, transacciones y control de concurrencia.</div>
+          </li>
+          <li class="subject-item si-cbfh">
+            <div class="subject-name">Lengua y Cultura <span class="subject-credits">2</span></div>
+            <div class="subject-description">Competencias comunicativas en inglés técnico y habilidades lingüísticas profesionales. CBFH.</div>
+          </li>
+        </ul>
+      </article>
+
+    </div><!-- /semesters-grid -->
+    </div><!-- /trio-group tp -->
+
+    <div class="cutline cl-tp">
+      <h4>🎓 Corte — Ciclo Técnico Profesional · 51 créditos acumulados (S1–S3)</h4>
+      <p>Título: <strong>Técnico Profesional en Desarrollo de Software</strong> · Ley 749/2002, Art. 9 · </p>
+	  <p><strong>Incluye Proyecto de Aula del Ciclo Técnico.</strong> y Requiere Registro Calificado independiente ante MEN</p>
+    </div>
+
+    <!-- CICLO TECNÓLOGO -->
+    <div class="cycle-banner cb-tec">
+      <div class="icon">🎓</div>
+      <div>
+        <h4>CICLO TECNOLÓGICO — Semestres 4 · 5 · 6</h4>
+        <p>107 créditos acumulados · Ley 749/2002 · Título: <strong>Tecnólogo en Ingeniería de Sistemas e Informática</strong></p>
+        <p class="note">📌 El Proyecto Integrador I (S6, 3 cr) es la experiencia de cierre que refrenda este título.</p>
+      </div>
+    </div>
+
+    <div class="trio-group trio-tec" data-label="Ciclo Tecnológico · S4 · S5 · S6">
+    <div class="semesters-grid">
+      <!-- S4 -->
+      <article class="semester-detail-card c-tec">
+        <div class="semester-header">
+          <h3 class="semester-title">Semestre 4 <span class="pill p-tec">Tecn.</span></h3>
+          <span class="credit-badge">19 créditos</span>
+        </div>
+        <ul class="subjects-list">
+          <li class="subject-item">
+            <div class="subject-name">Inteligencia Artificial Esencial <span class="subject-credits">3</span></div>
+            <div class="subject-description">Búsqueda, representación del conocimiento, aprendizaje supervisado básico, NLP introductorio.</div>
+          </li>
+          <li class="subject-item">
+            <div class="subject-name">Sistemas Operativos <span class="subject-credits">3</span></div>
+            <div class="subject-description">Procesos, hilos, sincronización, memoria virtual, sistemas de archivos. Prerrequisito de Redes y Arq. Conectividad.</div>
+          </li>
+          <li class="subject-item">
+            <div class="subject-name">Ingeniería de Software <span class="subject-credits">3</span></div>
+            <div class="subject-description">Ciclo de vida, metodologías ágiles (Scrum/Kanban), pruebas, calidad y DevOps básico.</div>
+          </li>
+          <li class="subject-item">
+            <div class="subject-name">Redes de Datos y Conectividad <span class="subject-credits">3</span></div>
+            <div class="subject-description">OSI/TCP-IP, protocolos, LAN/WAN, subnetting, DNS, HTTP/HTTPS.</div>
+          </li>
+          <li class="subject-item si-web">
+            <div class="subject-name">Desarrollo de Aplicaciones Web <span class="subject-credits">3</span></div>
+            <div class="subject-description">Taller integrador: SPA frontend + API REST backend + persistencia relacional (BD de S3) + despliegue cloud básico.</div>
+          </li>
+          <li class="subject-item">
+            <div class="subject-name">Transformación Digital <span class="subject-credits">4</span></div>
+            <div class="subject-description">Gobierno TI (ITIL/COBIT), madurez digital, habilitadores (cloud, IA, datos) y gestión del cambio organizacional.</div>
+          </li>
+        </ul>
+      </article>
+
+      <!-- S5 -->
+      <article class="semester-detail-card c-tec">
+        <div class="semester-header">
+          <h3 class="semester-title">Semestre 5 <span class="pill p-tec">Tecn.</span></h3>
+          <span class="credit-badge">18 créditos</span>
+        </div>
+        <ul class="subjects-list">
+          <li class="subject-item">
+            <div class="subject-name">Machine y Deep Learning <span class="subject-credits">3</span></div>
+            <div class="subject-description">Redes neuronales, CNNs, NLP aplicado. Aplica Estadística (S3) e IA Esencial (S4).</div>
+          </li>
+          <li class="subject-item">
+            <div class="subject-name">Administración de Bases de Datos <span class="subject-credits">3</span></div>
+            <div class="subject-description">Tuning, indexación, replicación, BD NoSQL (MongoDB, Redis), gestión en nube. Profundización de BD (S3).</div>
+          </li>
+          <li class="subject-item">
+            <div class="subject-name">Arquitectura de Software y Microservicios <span class="subject-credits">3</span></div>
+            <div class="subject-description">DDD, hexagonal, event-driven, CQRS, microservicios, Docker/K8s.</div>
+          </li>
+          <li class="subject-item">
+            <div class="subject-name">Arquitectura de Conectividad <span class="subject-credits">3</span></div>
+            <div class="subject-description">Redes empresariales, SDN, WAN avanzado, QoS, topologías cloud-on-premise.</div>
+          </li>
+          <li class="subject-item">
+            <div class="subject-name">Seguridad e Informática Cuántica <span class="subject-credits">3</span></div>
+            <div class="subject-description">Criptografía (AES/RSA/PKI), amenazas, fundamentos de computación cuántica (Shor, Grover) y algoritmos NIST PQC 2024.</div>
+          </li>
+          <li class="subject-item si-abet">
+            <div class="subject-name">Análisis y Diseño de Algoritmos <span class="subject-credits">3</span></div>
+            <div class="subject-description">Complejidad O(n), ordenamiento, búsqueda, programación dinámica, algoritmos en grafos. Base ABET CS.</div>
+          </li>
+        </ul>
+      </article>
+
+      <!-- S6 -->
+      <article class="semester-detail-card c-tec">
+        <div class="semester-header">
+          <h3 class="semester-title">Semestre 6 <span class="pill p-tec">Tecn.</span></h3>
+          <span class="credit-badge">19 créditos</span>
+        </div>
+        <ul class="subjects-list">
+          <li class="subject-item">
+            <div class="subject-name">Analítica de Datos para la Toma de Decisiones <span class="subject-credits">3</span></div>
+            <div class="subject-description">Pipelines, BI, visualización avanzada (Power BI, Tableau), storytelling con datos.</div>
+          </li>
+          <li class="subject-item">
+            <div class="subject-name">Sistemas Distribuidos <span class="subject-credits">3</span></div>
+            <div class="subject-description">Consistencia, tolerancia a fallos, consenso (Raft/Paxos), Kafka, serverless, cloud fundamentals.</div>
+          </li>
+          <li class="subject-item">
+            <div class="subject-name">Diseño y Gestión de Infraestructura de TI <span class="subject-credits">3</span></div>
+            <div class="subject-description">Multi-cloud IaaS/PaaS/SaaS, Terraform, monitoreo Prometheus/Grafana, alta disponibilidad.</div>
+          </li>
+          <li class="subject-item">
+            <div class="subject-name">Ciberseguridad y Régimen Jurídico de TI <span class="subject-credits">3</span></div>
+            <div class="subject-description">OWASP Top 10, ISO 27001, NIST CSF · Ley 1581/2012, Ley 1273/2009, GDPR · Privacidad por diseño.</div>
+          </li>
+          <li class="subject-item">
+            <div class="subject-name">Gestión de Proyectos TI <span class="subject-credits">3</span></div>
+            <div class="subject-description">PMBoK, SAFe/LeSS, gestión de riesgos, métricas de valor. Contextualizado en PI-I.</div>
+          </li>
+          <li class="subject-item si-cbfh">
+            <div class="subject-name">Ética Profesional <span class="subject-credits">1</span></div>
+            <div class="subject-description">Responsabilidad profesional, ética aplicada a la tecnología y marco deontológico. CBFH.</div>
+          </li>
+          <li class="subject-item si-integ">
+            <div class="subject-name">Proyecto Integrador I <span class="subject-credits">3</span></div>
+            <div class="subject-description">Solución TI completa que integra competencias S1–S6. <strong>Experiencia de cierre del Ciclo Tecnólogo.</strong> Prerrequisito del Capstone (S7).</div>
+          </li>
+        </ul>
+      </article>
+
+    </div><!-- /semesters-grid -->
+    </div><!-- /trio-group tec -->
+
+    <div class="cutline cl-tec">
+      <h4>🎓 Corte — Ciclo Tecnológico · 107 créditos acumulados (S1–S6)</h4>
+      <p>Título: <strong>Tecnólogo en Ingeniería de Sistemas e Informática</strong> · Ley 749/2002, Art. 9 · Requiere Registro Calificado independiente ante MEN</p>
+    </div>
+
+    <div class="cycle-banner cb-ing">
+      <div class="icon">🎓</div>
+      <div>
+        <h4>CICLO PROFESIONAL (INGENIERO) — Minor S7 (19 cr) + Práctica S8 (7 cr) = 26 cr</h4>
+        <p>133 créditos totales · RC MEN · Decreto 1330/2019 · Candidato ABET EAC · Título: <strong>Ingeniero de Sistemas e Informática</strong></p>
+        <p class="note">📌 La Práctica Profesional (S8) es <strong>obligatoria para todos los estudiantes</strong>. Minor+Capstone (S7) y Práctica (S8) son los dos componentes del ciclo Ingeniero.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ MINORS ═══════════════════════════ -->
+  <section class="program-section" id="minors">
+    <h2 class="section-title">Minors Especializados + Capstone • Semestre 7 • 19 Créditos</h2>
+
+    <div class="success-box">
+      <h4>✓ Estructura del Semestre 7</h4>
+      <p><strong>Cada Minor:</strong> 4–5 cursos disciplinares + Proyecto Capstone / Trabajo de Grado + Emprendimiento y Responsabilidad Social (2 cr CBFH) = 19 cr en total.</p>
+      <p><strong>Articulación posgrado:</strong> Los Minors de Ciberseguridad (VESI) y Transformación Digital articulan con el primer semestre de sus Especializaciones en UPB — el Ingeniero que los elige ingresa directamente al segundo semestre del posgrado.</p>
+    </div>
+
+    <div class="minors-tabs">
+      <button class="minor-tab active" data-minor="sw">Arquitectura de Software</button>
+      <button class="minor-tab" data-minor="infra">Gestión de Infraestructura TI</button>
+      <button class="minor-tab" data-minor="td">Transformación Digital</button>
+      <button class="minor-tab" data-minor="sec">Ciberseguridad · VESI</button>
+    </div>
+
+    <!-- SW -->
+    <div class="minor-pane active" id="minor-sw">
+      <div class="semesters-grid single-column">
+        <article class="semester-detail-card c-minor">
+          <div class="semester-header"><h3 class="semester-title">Minor: Arquitectura de Software + Capstone <span class="pill p-ing">Ing.</span></h3><span class="credit-badge">19 créditos</span></div>
+          <ul class="subjects-list">
+            <li class="subject-item"><div class="subject-name">Arquitectura de Software Avanzado <span class="subject-credits">3</span></div><div class="subject-description">Domain-Driven Design, patrones de resiliencia, arquitecturas hexagonales y diseño orientado al dominio.</div></li>
+            <li class="subject-item"><div class="subject-name">Diseño y Desarrollo de APIs <span class="subject-credits">3</span></div><div class="subject-description">REST avanzado, GraphQL, gRPC, API Gateway, versionamiento y documentación OpenAPI.</div></li>
+            <li class="subject-item"><div class="subject-name">Arquitectura en la Nube <span class="subject-credits">3</span></div><div class="subject-description">Multi-cloud, serverless, cloud-native, optimización de costos y arquitecturas de alta disponibilidad.</div></li>
+            <li class="subject-item"><div class="subject-name">DevOps y CI/CD <span class="subject-credits">3</span></div><div class="subject-description">Pipelines automatizados, IaC (Terraform/Ansible), observabilidad, SRE y GitOps.</div></li>
+            <li class="subject-item si-integ"><div class="subject-name">Proyecto Capstone / Trabajo de Grado <span class="subject-credits">5</span></div><div class="subject-description">Trabajo de grado que extiende el Proyecto Integrador I (S6). Defensa ante jurado académico e industrial.</div></li>
+            <li class="subject-item si-cbfh"><div class="subject-name">Emprendimiento y Responsabilidad Social <span class="subject-credits">2</span></div><div class="subject-description">Innovación social, modelos de emprendimiento tecnológico y proyectos con impacto positivo. CBFH.</div></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <!-- INFRA -->
+    <div class="minor-pane" id="minor-infra">
+      <div class="semesters-grid single-column">
+        <article class="semester-detail-card c-minor">
+          <div class="semester-header"><h3 class="semester-title">Minor: Gestión de Infraestructura TI + Capstone <span class="pill p-ing">Ing.</span></h3><span class="credit-badge">19 créditos</span></div>
+          <ul class="subjects-list">
+            <li class="subject-item"><div class="subject-name">Orquestación y Observabilidad <span class="subject-credits">3</span></div><div class="subject-description">Orquestación enterprise: Kubernetes multi-cluster (EKS/GKE/AKS), GitOps (ArgoCD), observabilidad completa (Prometheus/Grafana/Loki), service mesh production (Istio).</div></li>
+            <li class="subject-item"><div class="subject-name">Computación de Alto Rendimiento — HPC <span class="subject-credits">3</span></div><div class="subject-description">Clusters, GPU computing, paralelización y optimización de cargas computacionalmente intensivas.</div></li>
+            <li class="subject-item"><div class="subject-name">Arquitectura Híbrida Cloud Networking <span class="subject-credits">3</span></div><div class="subject-description">soluciones híbridas empresariales reales: Multi-Cloud Transit Gateways, Service Mesh (Istio), Global Load Balancing, IaC (Terraform).</div></li>
+            <li class="subject-item"><div class="subject-name">IoT e Industria 4.0 <span class="subject-credits">3</span></div><div class="subject-description">Dispositivos IoT, protocolos, edge computing y soluciones para industria 4.0.</div></li>
+            <li class="subject-item si-integ"><div class="subject-name">Proyecto Capstone / Trabajo de Grado <span class="subject-credits">5</span></div><div class="subject-description">Trabajo de grado centrado en Gestión de infraestructura TI avanzada.</div></li>
+            <li class="subject-item si-cbfh"><div class="subject-name">Emprendimiento y Responsabilidad Social <span class="subject-credits">2</span></div><div class="subject-description">Innovación social y proyectos con impacto tecnológico. CBFH.</div></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <!-- TD -->
+    <div class="minor-pane" id="minor-td">
+      <div class="info-box" style="margin-bottom:14px">
+        <h4>🔄 Minor en Transformación Digital — 1er semestre de la Especialización en TD de UPB</h4>
+        <p>El Ingeniero que elige este minor ingresa directamente al <strong>segundo semestre</strong> de la Especialización en Transformación Digital de UPB sin repetir contenidos. El Capstone es retomado por el Portafolio de Transformación Digital II del posgrado.</p>
+      </div>
+      <div class="semesters-grid single-column">
+        <article class="semester-detail-card c-minor">
+          <div class="semester-header"><h3 class="semester-title">Minor: Transformación Digital + Capstone <span class="pill p-ing">Ing. · 1er sem. Esp. TD</span></h3><span class="credit-badge">19 créditos</span></div>
+          <ul class="subjects-list">
+            <li class="subject-item"><div class="subject-name">Gobernanza y Valor Estratégico de TI <span class="subject-credits">3</span></div><div class="subject-description">COBIT, ISO 38500, alineación TI-negocio, creación de valor digital y decisiones basadas en datos.</div></li>
+            <li class="subject-item"><div class="subject-name">Liderazgo Estratégico en Entornos Digitales <span class="subject-credits">2</span></div><div class="subject-description">Liderazgo transformacional, gestión del cambio cultural, comunicación con stakeholders y equipos ágiles.</div></li>
+            <li class="subject-item"><div class="subject-name">Gestión Híbrida de Proyectos y Portafolio Digital <span class="subject-credits">2</span></div><div class="subject-description">PMBoK + Agile/SAFe, OKRs, presupuestación y ROI de iniciativas digitales.</div></li>
+            <li class="subject-item"><div class="subject-name">Arquitectura Empresarial Convergente <span class="subject-credits">3</span></div><div class="subject-description">TOGAF, Zachman, diseño de ecosistemas digitales, integración de sistemas legados con cloud-native.</div></li>
+            <li class="subject-item"><div class="subject-name">Operaciones y Servicios Digitales Avanzados <span class="subject-credits">2</span></div><div class="subject-description">AIOps, MLOps, ITIL 4, experiencia de usuario digital (CX/DX) y modelos ágiles de servicios.</div></li>
+            <li class="subject-item si-integ"><div class="subject-name">Proyecto Capstone / Trabajo de Grado <span class="subject-credits">5</span></div><div class="subject-description">Insumo del Portafolio de Transformación Digital II en el segundo semestre de la Especialización.</div></li>
+            <li class="subject-item si-cbfh"><div class="subject-name">Emprendimiento y Responsabilidad Social <span class="subject-credits">2</span></div><div class="subject-description">Innovación social y proyectos con impacto positivo. CBFH.</div></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <!-- SEC -->
+    <div class="minor-pane" id="minor-sec">
+      <div class="info-box" style="margin-bottom:14px">
+        <h4>🔐 Minor en Ciberseguridad — 1er semestre de la Especialización VESI (UPB)</h4>
+        <p>Profundiza la base construida en <em>Seguridad e Informática Cuántica</em> (S5) y <em>Ciberseguridad y Régimen Jurídico de TI</em> (S6). El Ingeniero ingresa directamente al <strong>segundo semestre de la Especialización</strong> en Gobierno y Seguridad Digital (VESI renovada) de UPB.</p>
+      </div>
+      <div class="semesters-grid single-column">
+        <article class="semester-detail-card c-minor">
+          <div class="semester-header"><h3 class="semester-title">Minor: Ciberseguridad + Capstone <span class="pill p-ing">Ing. · 1er sem. VESI</span></h3><span class="credit-badge">19 créditos</span></div>
+          <ul class="subjects-list">
+            <li class="subject-item"><div class="subject-name">Ciberseguridad Ofensiva y Defensiva Avanzada <span class="subject-credits">3</span></div><div class="subject-description">Hacking ético avanzado, ingeniería inversa y red teaming para identificar vulnerabilidades complejas.</div></li>
+            <li class="subject-item"><div class="subject-name">Criptografía Avanzada y Post-cuántica <span class="subject-credits">2</span></div><div class="subject-description">Sistemas resistentes a ataques cuánticos (CRYSTALS-Kyber, Dilithium, SPHINCS+) y estrategias de transición.</div></li>
+            <li class="subject-item"><div class="subject-name">Arquitectura de Sistemas de Confianza Cero (Zero Trust) <span class="subject-credits">2</span></div><div class="subject-description">Zero Trust (NIST SP 800-207), verificación continua, privilegios mínimos y DevSecOps.</div></li>
+            <li class="subject-item"><div class="subject-name">Análisis Forense Digital y Respuesta a Incidentes <span class="subject-credits">3</span></div><div class="subject-description">Forense en entornos híbridos/cloud/OT, MITRE ATT&CK, threat hunting y preservación de evidencia.</div></li>
+            <li class="subject-item"><div class="subject-name">Orquestación y Automatización de Seguridad con IA <span class="subject-credits">2</span></div><div class="subject-description">SOAR potenciado por IA, playbooks de respuesta automática, detección de amenazas complejas.</div></li>
+            <li class="subject-item si-integ"><div class="subject-name">Proyecto Capstone / Trabajo de Grado <span class="subject-credits">5</span></div><div class="subject-description">Investigación aplicada en ciberseguridad, articulable como trabajo de grado de la Especialización VESI.</div></li>
+            <li class="subject-item si-cbfh"><div class="subject-name">Emprendimiento y Responsabilidad Social <span class="subject-credits">2</span></div><div class="subject-description">Innovación social y proyectos con impacto positivo. CBFH.</div></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ CERTIFICACIONES ═══════════════════════════ -->
+  <section class="program-section" id="certs">
+    <h2 class="section-title">Certificaciones UPBpath • 6 Certificaciones • Nota ≥ 4.0</h2>
+
+    <div class="info-box">
+      <h4>¿Cómo funcionan las Certificaciones UPBpath?</h4>
+      <p>Al obtener nota ≥ 4.0 en los cursos específicos, el estudiante recibe automáticamente la certificación. <strong>No suman créditos adicionales</strong> — reconocen desempeño sobresaliente en cursos ya existentes del plan.</p>
+      <p><strong>Cobertura:</strong> S4 (IA, Redes, Desarrollo Web, GestTransfTI) → S5 (ML, ArqSW, ArqConect, SIQ) → S6 (SistDist, InfraTI, CiberRég, Analítica) = 12 cursos cubiertos</p>
+    </div>
+
+    <div class="cert-grid">
+      <!-- Full Stack -->
+      <article class="semester-detail-card c-cert">
+        <div class="semester-header"><h3 class="semester-title">🏆 Full Stack Developer</h3><span class="credit-badge" style="background:#00bcd4">6 cr</span></div>
+        <p><span class="badge badge-green">Nota mín: 4.0</span><span class="badge">S4 + S5</span></p>
+        <ul class="subjects-list" style="margin-top:10px">
+          <li class="subject-item"><div class="subject-name">Desarrollo de Aplicaciones Web (S4) <span class="subject-credits">3</span></div></li>
+          <li class="subject-item"><div class="subject-name">Arquitectura de Software y Microservicios (S5) <span class="subject-credits">3</span></div></li>
+        </ul>
+        <p class="note-text">🎯 Equiv: AWS Certified Developer + Arquitectura de Microservicios</p>
+      </article>
+
+      <!-- Cloud DevOps -->
+      <article class="semester-detail-card c-cert">
+        <div class="semester-header"><h3 class="semester-title">🏆 Cloud &amp; DevOps Engineer</h3><span class="credit-badge" style="background:#00bcd4">6 cr</span></div>
+        <p><span class="badge badge-green">Nota mín: 4.0</span><span class="badge">S6</span></p>
+        <ul class="subjects-list" style="margin-top:10px">
+          <li class="subject-item"><div class="subject-name">Sistemas Distribuidos (S6) <span class="subject-credits">3</span></div></li>
+          <li class="subject-item"><div class="subject-name">Diseño y Gestión de Infraestructura de TI (S6) <span class="subject-credits">3</span></div></li>
+        </ul>
+        <p class="note-text">🎯 Equiv: AWS SysOps + HashiCorp Terraform Associate</p>
+      </article>
+
+      <!-- Data AI -->
+      <article class="semester-detail-card c-cert">
+        <div class="semester-header"><h3 class="semester-title">🏆 Data &amp; AI Engineer</h3><span class="credit-badge" style="background:#00bcd4">6 cr</span></div>
+        <p><span class="badge badge-green">Nota mín: 4.0</span><span class="badge">S4 + S5</span></p>
+        <ul class="subjects-list" style="margin-top:10px">
+          <li class="subject-item"><div class="subject-name">Inteligencia Artificial Esencial (S4) <span class="subject-credits">3</span></div></li>
+          <li class="subject-item"><div class="subject-name">Machine y Deep Learning (S5) <span class="subject-credits">3</span></div></li>
+        </ul>
+        <p class="note-text">🎯 Equiv: Google Professional ML Engineer</p>
+      </article>
+
+      <!-- Cybersec -->
+      <article class="semester-detail-card c-cert">
+        <div class="semester-header"><h3 class="semester-title">🏆 Cybersecurity Analyst</h3><span class="credit-badge" style="background:#00bcd4">6 cr</span></div>
+        <p><span class="badge badge-green">Nota mín: 4.0</span><span class="badge">S5 + S6</span></p>
+        <ul class="subjects-list" style="margin-top:10px">
+          <li class="subject-item"><div class="subject-name">Seguridad e Informática Cuántica (S5) <span class="subject-credits">3</span></div></li>
+          <li class="subject-item"><div class="subject-name">Ciberseguridad y Régimen Jurídico de TI (S6) <span class="subject-credits">3</span></div></li>
+        </ul>
+        <p class="note-text">🎯 Equiv: CompTIA Security+ + fundamentos CISSP</p>
+      </article>
+
+      <!-- Cloud Net -->
+      <article class="semester-detail-card" style="border-top-color:#7c3aed;position:relative">
+        <div class="semester-header"><h3 class="semester-title">☁️ Cloud &amp; Network Infrastructure</h3><span class="credit-badge" style="background:#7c3aed">6 cr</span></div>
+        <p><span class="badge badge-green">Nota mín: 4.0</span><span class="badge">S4 + S5</span></p>
+        <ul class="subjects-list" style="margin-top:10px">
+          <li class="subject-item"><div class="subject-name">Redes de Datos y Conectividad (S4) <span class="subject-credits">3</span></div></li>
+          <li class="subject-item"><div class="subject-name">Arquitectura de Conectividad (S5) <span class="subject-credits">3</span></div></li>
+        </ul>
+        <p class="note-text">🎯 Secuencia S4→S5 · Equiv: Cisco CCNA + AWS Networking Specialty</p>
+      </article>
+
+      <!-- Digital Transf -->
+      <article class="semester-detail-card" style="border-top-color:#b45309;position:relative">
+        <div class="semester-header"><h3 class="semester-title">🔄 Digital Transformation Professional</h3><span class="credit-badge" style="background:#b45309">7 cr</span></div>
+        <p><span class="badge badge-green">Nota mín: 4.0</span><span class="badge">S4 + S6</span></p>
+        <ul class="subjects-list" style="margin-top:10px">
+          <li class="subject-item"><div class="subject-name">Gestión y Transformación Digital de TI (S4) <span class="subject-credits">4</span></div></li>
+          <li class="subject-item"><div class="subject-name">Analítica de Datos para la Toma de Decisiones (S6) <span class="subject-credits">3</span></div></li>
+        </ul>
+        <p class="note-text">🎯 7 cr por naturaleza de los cursos · Equiv: TOGAF Foundation + Power Platform PL-900</p>
+      </article>
+    </div>
+
+    <div class="success-box" style="margin-top:24px">
+      <h4>✅ Estrategias de obtención por perfil vocacional</h4>
+      <p><strong>Desarrollador:</strong> Full Stack + Data &amp; AI + Cloud &amp; DevOps</p>
+      <p><strong>Infraestructura &amp; Nube:</strong> Cloud &amp; Network Infrastructure + Cloud &amp; DevOps + Cybersecurity</p>
+      <p><strong>Gerencial / Estratégico:</strong> Digital Transformation + Data &amp; AI + Full Stack</p>
+      <p><strong>Seguridad &amp; Redes:</strong> Cybersecurity + Cloud &amp; Network Infrastructure + Cloud &amp; DevOps</p>
+      <p><strong>Transformación Digital completa:</strong> Digital Transformation + Data &amp; AI + Cloud &amp; DevOps + Minor TD → candidato natural a la Especialización en TD de UPB</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ PRÁCTICA ═══════════════════════════ -->
+  <section class="program-section" id="practica">
+    <h2 class="section-title">Práctica Profesional • Semestre 8 • 7 Créditos • Obligatoria</h2>
+
+    <div class="warning-box info-box">
+      <h4>📋 Componente Obligatorio del Ciclo Ingeniero</h4>
+      <p>La Práctica Profesional (7 cr) es <strong>obligatoria para todos los estudiantes</strong> del programa sin excepción. Junto con el Minor + Capstone (S7) constituye el Ciclo Profesional: <strong>19 cr + 7 cr = 26 cr</strong> que completan los 133 créditos del plan.</p>
+      <p><strong>Requisito de ingreso:</strong> Haber aprobado el Capstone (S7) y cumplido los créditos mínimos del plan.</p>
+    </div>
+
+    <div class="semesters-grid single-column">
+      <article class="semester-detail-card c-prac">
+        <div class="semester-header"><h3 class="semester-title">Práctica Profesional — Semestre 8</h3><span class="credit-badge" style="background:#e74c3c">7 créditos</span></div>
+        <ul class="subjects-list">
+          <li class="subject-item" style="background:linear-gradient(135deg,#ffebee,#fce4ec);border-left-color:#e74c3c">
+            <div class="subject-name">Práctica Profesional (tiempo completo en el sector TI) <span class="subject-credits">7</span></div>
+            <div class="subject-description">Experiencia laboral supervisada de tiempo completo. El estudiante aplica en contexto real todas las competencias del programa — major y minor elegido — con acompañamiento del tutor empresarial y el asesor académico de FISI.</div>
+          </li>
+        </ul>
+        <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:8px">
+          <span class="badge badge-orange">Práctica empresarial</span>
+          <span class="badge badge-orange">Investigación aplicada</span>
+          <span class="badge badge-orange">Emprendimiento tecnológico</span>
+          <span class="badge badge-orange">Práctica social TI</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="success-box" style="margin-top:20px">
+      <h4>💡 Las tres experiencias integradoras del programa</h4>
+      <p>📌 <strong>Técnico Profesional (S3):</strong> Proyecto de Aula en Estructuras de Datos soportadas en Web — aplicación web funcional que evidencia el dominio del ciclo técnico.</p>
+      <p>📌 <strong>Tecnólogo (S6):</strong> Proyecto Integrador I — solución TI completa que integra competencias de S1–S6 y refrenda el título de Tecnólogo.</p>
+      <p>📌 <strong>Ingeniero (S7+S8):</strong> Capstone (Trabajo de Grado) + Práctica Profesional obligatoria — el binomio que completa la formación como Ingeniero de Sistemas e Informática.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ CICLO PROPEDÉUTICO ═══════════════════════════ -->
+  <section class="program-section" id="ciclo">
+    <h2 class="section-title">Ciclo Propedéutico • Tres Títulos Articulados • Ley 749/2002</h2>
+
+    <div class="warning-box info-box">
+      <h4>⚠️ Nota Regulatoria</h4>
+      <p>Esta propuesta requiere la obtención de <strong>Registros Calificados independientes</strong> ante el MEN para los niveles Técnico Profesional y Tecnólogo (Decreto 1330/2019). La viabilidad jurídica y los créditos mínimos exactos deben verificarse con la Vicerrectoría Académica y la Sala de Ingeniería del CNA antes de la radicación formal.</p>
+    </div>
+
+    <div class="ciclo-timeline">
+      <div class="cphase ph-tp">
+        <div style="font-size:1.5rem">🎓</div>
+        <div class="cphase-num">51</div>
+        <h4>Técnico Profesional<br>en Desarrollo de Software</h4>
+        <div class="cphase-sub">S1 · S2 · S3<br>≈ 1.5 años</div>
+        <div class="cphase-ref">Proyecto de Aula (S3)</div>
+      </div>
+      <div class="cphase-arr">→</div>
+      <div class="cphase ph-tec">
+        <div style="font-size:1.5rem">🎓</div>
+        <div class="cphase-num">107</div>
+        <h4>Tecnólogo en<br>Ingeniería de Sistemas</h4>
+        <div class="cphase-sub">S1–S6 · ≈ 3 años<br>+56 cr desde Técnico</div>
+        <div class="cphase-ref">Proyecto Integrador I (S6)</div>
+      </div>
+      <div class="cphase-arr">→</div>
+      <div class="cphase ph-ing">
+        <div style="font-size:1.5rem">🎓</div>
+        <div class="cphase-num">133</div>
+        <h4>Ingeniero de<br>Sistemas e Informática</h4>
+        <div class="cphase-sub">S1–S8 · ≈ 4.5 años<br>+26 cr desde Tecnólogo</div>
+        <div class="cphase-ref">Capstone (S7) + Práctica (S8)</div>
+      </div>
+    </div>
+
+    <div class="comp-grid">
+      <div class="comp-card cc-tp">
+        <h4>🎓 Técnico Profesional</h4>
+        <span class="cc-sub">Desarrollo de Software · 51 cr · S1–S3</span>
+        <ul>
+          <li>Aplicar algoritmia y OOP en desarrollo de software con contexto web</li>
+          <li>Construir aplicaciones usando estructuras de datos modernas</li>
+          <li>Diseñar esquemas de bases de datos relacionales con SQL</li>
+          <li>Fundamentar soluciones en cálculo, álgebra lineal, estadística y física</li>
+          <li>Actuar con ética en equipos de desarrollo colaborativo</li>
+        </ul>
+        <span class="comp-badge" style="background:#9b59b6">51 cr · Ley 749/2002</span>
+      </div>
+      <div class="comp-card cc-tec">
+        <h4>🎓 Tecnólogo en ISI</h4>
+        <span class="cc-sub">Ingeniería de Sistemas · 107 cr · S1–S6</span>
+        <ul>
+          <li>Diseñar y desplegar aplicaciones completas (frontend + backend + BD + cloud)</li>
+          <li>Administrar infraestructura TI, redes y sistemas distribuidos</li>
+          <li>Aplicar IA y analítica de datos en decisiones organizacionales</li>
+          <li>Gestionar proyectos TI con metodologías ágiles e integrar ciberseguridad</li>
+          <li>Liderar procesos de transformación digital con base en gobierno TI</li>
+        </ul>
+        <span class="comp-badge" style="background:#2980b9">107 cr · Ley 749/2002</span>
+      </div>
+      <div class="comp-card cc-ing">
+        <h4>🎓 Ingeniero de Sistemas e Informática</h4>
+        <span class="cc-sub">133 cr · S1–S8 · RC MEN · Candidato ABET EAC</span>
+        <ul>
+          <li>Diseñar sistemas complejos aplicando matemáticas, ciencias e ingeniería</li>
+          <li>Liderar investigación y desarrollo tecnológico con impacto social</li>
+          <li>Especializarse en Arquitectura SW, Infraestructura TI, Ciberseguridad o TD</li>
+          <li>Comunicar soluciones con responsabilidad ética y humanista (misión UPB)</li>
+          <li>Ejercer en contextos locales, regionales e internacionales (perfil ABET)</li>
+        </ul>
+        <span class="comp-badge" style="background:#27ae60">133 cr · RC MEN + ABET EAC</span>
+      </div>
+    </div>
+
+    <div class="legal-box">
+      <h3>Marco Jurídico — Ciclo Propedéutico en Colombia</h3>
+      <p><strong>Ley 749 de 2002</strong> (Arts. 2 y 9): Establece el sistema de ciclos propedéuticos para educación superior. Cada ciclo prepara y habilita el acceso al siguiente; la aprobación conduce al otorgamiento de un título sin pérdida de créditos al avanzar.</p>
+      <p><strong>Decreto 1330/2019</strong>: Regula las condiciones de calidad del Registro Calificado. Cada nivel del ciclo requiere su propio RC con condiciones diferenciadas. Los tres títulos articulan dentro del mismo creditaje (133 cr) sin cursos adicionales ni modificaciones a los 33 cr ABET.</p>
+      <div class="law-tags">
+        <span class="law-tag">Ley 749/2002 · Arts. 2, 9</span>
+        <span class="law-tag">Decreto 1330/2019</span>
+        <span class="law-tag">Decreto 1075/2015 (modificado)</span>
+        <span class="law-tag">CNA · Lineamientos por Ciclos</span>
+      </div>
+    </div>
+
+    <h3 style="text-align:center;color:#2c3e50;font-size:1.2rem;margin:24px 0 14px">Mapa Completo de Asignaturas por Ciclo</h3>
+    <table class="ciclo-tbl">
+      <thead><tr><th>Sem.</th><th>Asignatura</th><th>Cr.</th><th>Tipo</th><th>Ciclo</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="6" style="background:#f5eeff;color:#6a0dad;font-weight:700;vertical-align:middle">S1</td><td>Cálculo Diferencial</td><td>3</td><td>ABET · Mat.</td><td><span class="pill p-tp">T.P.</span></td></tr>
+        <tr><td>Algoritmia y Programación</td><td>4</td><td>ABET · CS</td><td><span class="pill p-tp">T.P.</span></td></tr>
+        <tr><td>Taller de Ingeniería en SI</td><td>2</td><td>Profesional</td><td><span class="pill p-tp">T.P.</span></td></tr>
+        <tr><td>Pensamiento Sistémico</td><td>3</td><td>Transversal</td><td><span class="pill p-tp">T.P.</span></td></tr>
+        <tr><td>Humanismo y Cultura Ciudadana</td><td>2</td><td>CBFH</td><td><span class="pill p-tp">T.P.</span></td></tr>
+        <tr><td>Ética General</td><td>1</td><td>CBFH</td><td><span class="pill p-tp">T.P.</span></td></tr>
+        <tr><td rowspan="6" style="background:#f5eeff;color:#6a0dad;font-weight:700;vertical-align:middle">S2</td><td>Cálculo Integral</td><td>3</td><td>ABET · Mat.</td><td><span class="pill p-tp">T.P.</span></td></tr>
+        <tr><td>Álgebra Lineal</td><td>3</td><td>ABET · Mat.</td><td><span class="pill p-tp">T.P.</span></td></tr>
+        <tr><td>Matemáticas Discretas</td><td>3</td><td>ABET · Mat.</td><td><span class="pill p-tp">T.P.</span></td></tr>
+        <tr><td>POO basada en Web</td><td>3</td><td>Profesional</td><td><span class="pill p-tp">T.P.</span></td></tr>
+        <tr><td>Análisis y Diseño de Sistemas</td><td>3</td><td>Profesional</td><td><span class="pill p-tp">T.P.</span></td></tr>
+        <tr><td>Cristología Básica</td><td>2</td><td>CBFH</td><td><span class="pill p-tp">T.P.</span></td></tr>
+        <tr><td rowspan="6" style="background:#f5eeff;color:#6a0dad;font-weight:700;vertical-align:middle">S3</td><td>Cálculo Vectorial</td><td>3</td><td>ABET · Mat.</td><td><span class="pill p-tp">T.P.</span></td></tr>
+        <tr><td>Física Mecánica y Computacional</td><td>4</td><td>ABET · Física</td><td><span class="pill p-tp">T.P.</span></td></tr>
+        <tr><td>Estadística Descriptiva e Inferencial</td><td>4</td><td>ABET · Mat.</td><td><span class="pill p-tp">T.P.</span></td></tr>
+        <tr><td>Estructuras de Datos soportadas en Web ★</td><td>3</td><td>ABET · CS</td><td><span class="pill p-tp">T.P.</span></td></tr>
+        <tr><td>Bases de Datos</td><td>3</td><td>Profesional</td><td><span class="pill p-tp">T.P.</span></td></tr>
+        <tr><td>Lengua y Cultura</td><td>2</td><td>CBFH</td><td><span class="pill p-tp">T.P.</span></td></tr>
+        <tr class="cut-tp"><td colspan="5">🎓 CORTE TÉCNICO PROFESIONAL · 51 créditos · Técnico Profesional en Desarrollo de Software</td></tr>
+        <tr><td rowspan="6" style="background:#e8f4fd;color:#1a5276;font-weight:700;vertical-align:middle">S4</td><td>Inteligencia Artificial Esencial</td><td>3</td><td>Profesional</td><td><span class="pill p-tec">Tecn.</span></td></tr>
+        <tr><td>Sistemas Operativos</td><td>3</td><td>Profesional</td><td><span class="pill p-tec">Tecn.</span></td></tr>
+        <tr><td>Ingeniería de Software</td><td>3</td><td>Profesional</td><td><span class="pill p-tec">Tecn.</span></td></tr>
+        <tr><td>Redes de Datos y Conectividad</td><td>3</td><td>Profesional</td><td><span class="pill p-tec">Tecn.</span></td></tr>
+        <tr><td>Desarrollo de Aplicaciones Web</td><td>3</td><td>Prof. · Web</td><td><span class="pill p-tec">Tecn.</span></td></tr>
+        <tr><td>Gestión y Transformación Digital de TI</td><td>4</td><td>Profesional</td><td><span class="pill p-tec">Tecn.</span></td></tr>
+        <tr><td rowspan="6" style="background:#e8f4fd;color:#1a5276;font-weight:700;vertical-align:middle">S5</td><td>Machine y Deep Learning</td><td>3</td><td>Profesional</td><td><span class="pill p-tec">Tecn.</span></td></tr>
+        <tr><td>Administración de Bases de Datos</td><td>3</td><td>Profesional</td><td><span class="pill p-tec">Tecn.</span></td></tr>
+        <tr><td>Arquitectura de Software y Microservicios</td><td>3</td><td>Profesional</td><td><span class="pill p-tec">Tecn.</span></td></tr>
+        <tr><td>Arquitectura de Conectividad</td><td>3</td><td>Profesional</td><td><span class="pill p-tec">Tecn.</span></td></tr>
+        <tr><td>Seguridad e Informática Cuántica</td><td>3</td><td>Profesional</td><td><span class="pill p-tec">Tecn.</span></td></tr>
+        <tr><td>Análisis y Diseño de Algoritmos</td><td>3</td><td>ABET · CS</td><td><span class="pill p-tec">Tecn.</span></td></tr>
+        <tr><td rowspan="7" style="background:#e8f4fd;color:#1a5276;font-weight:700;vertical-align:middle">S6</td><td>Analítica de Datos para la Toma de Decisiones</td><td>3</td><td>Profesional</td><td><span class="pill p-tec">Tecn.</span></td></tr>
+        <tr><td>Sistemas Distribuidos</td><td>3</td><td>Profesional</td><td><span class="pill p-tec">Tecn.</span></td></tr>
+        <tr><td>Diseño y Gestión de Infraestructura de TI</td><td>3</td><td>Profesional</td><td><span class="pill p-tec">Tecn.</span></td></tr>
+        <tr><td>Ciberseguridad y Régimen Jurídico de TI</td><td>3</td><td>Profesional</td><td><span class="pill p-tec">Tecn.</span></td></tr>
+        <tr><td>Gestión de Proyectos TI</td><td>3</td><td>Profesional</td><td><span class="pill p-tec">Tecn.</span></td></tr>
+        <tr><td>Ética Profesional</td><td>1</td><td>CBFH</td><td><span class="pill p-tec">Tecn.</span></td></tr>
+        <tr><td>Proyecto Integrador I ★★</td><td>3</td><td>Integrador</td><td><span class="pill p-tec">Tecn.</span></td></tr>
+        <tr class="cut-tec"><td colspan="5">🎓 CORTE TECNÓLOGO · 107 créditos · Tecnólogo en Ingeniería de Sistemas e Informática</td></tr>
+        <tr><td style="background:#e8f8f0;color:#145a32;font-weight:700">S7</td><td>Minor (4–5 cursos) + Capstone + Emprendimiento y Resp. Social</td><td>19</td><td>Minor / Capstone / CBFH</td><td><span class="pill p-ing">Ing.</span></td></tr>
+        <tr><td style="background:#e8f8f0;color:#145a32;font-weight:700">S8</td><td>Práctica Profesional (obligatoria para todos)</td><td>7</td><td>Práctica inmersiva</td><td><span class="pill p-ing">Ing.</span></td></tr>
+        <tr class="cut-ing"><td colspan="5">🎓 INGENIERO DE SISTEMAS E INFORMÁTICA · 133 créditos · RC MEN + Candidato ABET EAC</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.8rem;color:#7f8c8d;margin-top:8px;line-height:1.5">★ Incluye Proyecto de Aula del Ciclo Técnico Profesional · ★★ El Proyecto Integrador I refrenda el título de Tecnólogo · *Propuesta sujeta a Registros Calificados independientes ante MEN</p>
+  </section>
+
+</div><!-- /container -->
+
+<script>
+const navBtns = document.querySelectorAll('.nav-button');
+const sections = document.querySelectorAll('.program-section');
+navBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    navBtns.forEach(b => b.classList.remove('active'));
+    sections.forEach(s => s.classList.remove('active'));
+    btn.classList.add('active');
+    const target = document.getElementById(btn.dataset.section);
+    if (target) target.classList.add('active');
+  });
+});
+
+const minorTabs = document.querySelectorAll('.minor-tab');
+minorTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    minorTabs.forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.minor-pane').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    const pane = document.getElementById('minor-' + tab.dataset.minor);
+    if (pane) pane.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
