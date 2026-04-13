@@ -60,6 +60,72 @@ body{
 .nav-certs{background:linear-gradient(135deg,#00bcd4,#0097a7)}
 .nav-practica{background:linear-gradient(135deg,#e74c3c,#c0392b)}
 .nav-ciclo{background:linear-gradient(135deg,#9b59b6,#8e44ad)}
+.nav-ingreso{background:linear-gradient(135deg,#16a085,#1abc9c)}
+.nav-egreso{background:linear-gradient(135deg,#8c1d40,#c8171e)}
+
+/* ── PERFIL TABLES ── */
+.perfil-table{width:100%;border-collapse:collapse;font-size:.85rem;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);margin:16px 0}
+.perfil-table th{padding:11px 16px;text-align:left;font-weight:700;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;color:#fff}
+.perfil-table td{padding:12px 16px;border-bottom:1px solid #ecf0f1;vertical-align:top;color:#2c3e50;line-height:1.6}
+.perfil-table tr:last-child td{border-bottom:none}
+.perfil-table tr:nth-child(even) td{background:#f9f9f9}
+.th-ingreso{background:#16a085}
+.th-egreso{background:#8c1d40}
+
+/* ── CAPACIDAD CARDS ── */
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0}
+@media(max-width:900px){.cap-grid{grid-template-columns:1fr}}
+.cap-card{border-radius:12px;padding:18px;border-top:4px solid;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.07)}
+.cap-card h4{font-size:.95rem;font-weight:700;margin:0 0 8px;color:#2c3e50}
+.cap-card p{font-size:.83rem;color:#5d6d7e;margin:0 0 8px;line-height:1.55}
+.cap-card .evidencia{font-size:.78rem;color:#7f8c8d;border-top:1px solid #ecf0f1;padding-top:8px;margin-top:4px}
+.cap-card .evidencia strong{color:#2c3e50}
+.cc-ingreso{border-top-color:#16a085;background:linear-gradient(160deg,#f0fdf9,#fff)}
+.cc-egreso-hum{border-top-color:#8c1d40;background:linear-gradient(160deg,#fdf2f4,#fff)}
+.cc-egreso-disc{border-top-color:#2980b9;background:linear-gradient(160deg,#eaf4fb,#fff)}
+.cc-egreso-prof{border-top-color:#27ae60;background:linear-gradient(160deg,#e9f7ef,#fff)}
+.cc-egreso-int{border-top-color:#f39c12;background:linear-gradient(160deg,#fef9ef,#fff)}
+
+/* ── DOMINIO CARDS ── */
+.dominio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:16px 0}
+@media(max-width:800px){.dominio-grid{grid-template-columns:1fr}}
+.dominio-card{border-radius:12px;padding:18px;border-left:5px solid;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.07)}
+.dominio-card h4{font-size:.9rem;font-weight:700;margin:0 0 6px;color:#2c3e50}
+.dominio-card p{font-size:.8rem;color:#5d6d7e;margin:0;line-height:1.55}
+.dc-sw{border-left-color:#8c1d40;background:#fdf2f4}
+.dc-infra{border-left-color:#2980b9;background:#eaf4fb}
+.dc-td{border-left-color:#f39c12;background:#fef9ef}
+.dc-sec{border-left-color:#27ae60;background:#e9f7ef}
+
+/* ── SINTESIS BOX ── */
+.sintesis-box{background:linear-gradient(135deg,#2c3e50,#34495e);border-radius:14px;padding:24px 28px;margin:22px 0;color:#ecf0f1}
+.sintesis-box h3{color:#f39c12;margin:0 0 14px;font-size:1.05rem}
+.sintesis-box p{font-size:.87rem;line-height:1.75;margin:0}
+.sintesis-box.ingreso-sint{background:linear-gradient(135deg,#0e6655,#16a085)}
+.sintesis-box.egreso-sint{background:linear-gradient(135deg,#5b0e1f,#8c1d40)}
+
+/* ── CONTEXT CARDS ── */
+.context-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:16px 0}
+@media(max-width:1000px){.context-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.context-grid{grid-template-columns:1fr}}
+.context-card{border-radius:10px;padding:14px 16px;text-align:center;border-top:3px solid}
+.context-card h5{font-size:.82rem;font-weight:700;margin:0 0 6px;color:#2c3e50}
+.context-card p{font-size:.76rem;color:#5d6d7e;margin:0;line-height:1.5}
+.ctx-1{border-top-color:#8c1d40;background:#fdf2f4}
+.ctx-2{border-top-color:#2980b9;background:#eaf4fb}
+.ctx-3{border-top-color:#27ae60;background:#e9f7ef}
+.ctx-4{border-top-color:#f39c12;background:#fef9ef}
+
+/* ── PROBLEMA CARDS ── */
+.problema-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:14px 0}
+@media(max-width:800px){.problema-grid{grid-template-columns:1fr}}
+.problema-card{border-radius:10px;padding:14px 16px;border-left:4px solid;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.problema-card h5{font-size:.82rem;font-weight:700;margin:0 0 5px;color:#2c3e50}
+.problema-card p{font-size:.78rem;color:#5d6d7e;margin:0;line-height:1.5}
+.pr-1{border-left-color:#8c1d40}
+.pr-2{border-left-color:#2980b9}
+.pr-3{border-left-color:#27ae60}
+.pr-4{border-left-color:#f39c12}
 
 /* ── SECTIONS ── */
 .program-section{display:none;animation:fade .25s ease}
@@ -343,6 +409,8 @@ body{
     <button class="nav-button nav-minors" data-section="minors">🔬 Minors + Capstone (S7)</button>
     <button class="nav-button nav-practica" data-section="practica">💼 Práctica Profesional (S8)</button>
 	<button class="nav-button nav-certs" data-section="certs">🏆 Certificaciones UPBpath</button>
+    <button class="nav-button nav-ingreso" data-section="ingreso">🎯 Perfil de Ingreso</button>
+    <button class="nav-button nav-egreso" data-section="egreso">🏅 Perfil de Egreso</button>
     <button class="nav-button nav-ciclo" data-section="ciclo">🎓 Ciclo Propedéutico</button>
   </div>
 
@@ -981,6 +1049,257 @@ body{
       </tbody>
     </table>
     <p style="font-size:.8rem;color:#7f8c8d;margin-top:8px;line-height:1.5">★ Incluye Proyecto de Aula del Ciclo Técnico Profesional · ★★ El Proyecto Integrador I refrenda el título de Tecnólogo · *Propuesta sujeta a Registros Calificados independientes ante MEN</p>
+  </section>
+
+  <!-- ══════════════════════ PERFIL DE INGRESO ══════════════════════ -->
+  <section class="program-section" id="ingreso">
+    <h2 class="section-title">Perfil de Ingreso · Ingeniería de Sistemas e Informática</h2>
+
+    <div class="sintesis-box ingreso-sint">
+      <h3>📋 Síntesis del Perfil de Ingreso</h3>
+      <p>Para el ingreso al programa se debe ser bachiller, técnico o tecnólogo, interesado en adquirir competencias teóricas y prácticas en tecnologías de información. Con capacidad para aprender (aptitudes cognitivas, disposición para el estudio, motivación e interés por el programa), comunicar y comunicarse (habilidades de comunicación oral y escrita), y relacionarse con los otros y el entorno (relaciones interpersonales y adecuación a la cultura UPB). Se requieren competencias básicas en lectura crítica, razonamiento cuantitativo y competencias ciudadanas, evidenciadas en los resultados de Pruebas Saber 11, que permitan al aspirante afrontar con éxito los retos académicos del programa.</p>
+    </div>
+
+    <!-- Capacidades humanas -->
+    <h3 class="section-title" style="font-size:1.2rem;margin:24px 0 10px">Capacidades Humanas requeridas al ingreso</h3>
+    <p style="font-size:.85rem;color:#7f8c8d;text-align:center;margin:0 0 16px">Evaluadas mediante <strong>entrevista personalizada (30–40 min)</strong> con criterios observacionales</p>
+
+    <div class="cap-grid">
+      <div class="cap-card cc-ingreso">
+        <h4>💡 Pensamiento Crítico</h4>
+        <p>Asume una posición fundamentada desde el análisis, la síntesis y la asociación para intervenir un fenómeno.</p>
+        <div class="evidencia"><strong>Evidencia:</strong> Claridad sobre por qué eligió Ingeniería de Sistemas e Informática y la UPB.</div>
+      </div>
+      <div class="cap-card cc-ingreso">
+        <h4>🧭 Autonomía</h4>
+        <p>Actúa con libertad, independencia, responsabilidad y sentido crítico en la toma de decisiones, y lo evidencia en sus formas de aprender.</p>
+        <div class="evidencia"><strong>Evidencia:</strong> Capacidad de tomar decisiones propias sobre su futuro con un proyecto de vida como Ing. de Sistemas e Informática.</div>
+      </div>
+      <div class="cap-card cc-ingreso">
+        <h4>🔗 Pensamiento Sistémico</h4>
+        <p>Comprende la realidad a partir de una mirada integradora entre las partes, sus relaciones y propiedades, para asumir diferentes perspectivas de solución.</p>
+        <div class="evidencia"><strong>Evidencia:</strong> Interés por trabajo colaborativo y aprendizaje con otros como estrategia de formación profesional.</div>
+      </div>
+    </div>
+
+    <!-- Competencias -->
+    <h3 class="section-title" style="font-size:1.2rem;margin:24px 0 10px">Competencias requeridas al ingreso</h3>
+    <p style="font-size:.85rem;color:#7f8c8d;text-align:center;margin:0 0 16px"><strong>Evidencia principal:</strong> Resultados en Pruebas Saber 11 &nbsp;·&nbsp; <strong>Evidencia complementaria:</strong> Entrevista personalizada</p>
+
+    <table class="perfil-table">
+      <thead>
+        <tr>
+          <th class="th-ingreso" style="width:20%">Competencia</th>
+          <th class="th-ingreso" style="width:40%">Evidencia principal (Pruebas Saber 11)</th>
+          <th class="th-ingreso" style="width:40%">Observación complementaria (Entrevista)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>📖 Lectura Crítica</strong></td>
+          <td>Resultados en Pruebas Saber 11 — Componente Lectura Crítica (≥ 40 pts.)</td>
+          <td>
+            • Comprensión de instrucciones y preguntas durante la entrevista<br>
+            • Capacidad de seguir conversaciones complejas<br>
+            • Interpretación adecuada de situaciones planteadas
+          </td>
+        </tr>
+        <tr>
+          <td><strong>🔢 Razonamiento Cuantitativo</strong></td>
+          <td>Resultados en Pruebas Saber 11 — Componente Razonamiento Cuantitativo (≥ 40 pts.)</td>
+          <td>
+            • Claridad al explicar situaciones que involucran lógica o secuencias<br>
+            • Trayectoria en matemáticas durante educación media
+          </td>
+        </tr>
+        <tr>
+          <td><strong>🤝 Competencias Ciudadanas</strong></td>
+          <td>Resultados en Pruebas Saber 11 — Componente Competencias Ciudadanas (≥ 40 pts.)</td>
+          <td>
+            • Actitud durante la entrevista: respeto, amabilidad, receptividad<br>
+            • Valores y comportamiento ético observado<br>
+            • Sensibilidad social y compromiso con el entorno<br>
+            • Disposición para trabajo en equipo<br>
+            • Participación en actividades comunitarias o de servicio social
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Programas de apoyo -->
+    <h3 class="section-title" style="font-size:1.2rem;margin:28px 0 12px">Programas de trabajo con los admitidos</h3>
+    <div class="context-grid">
+      <div class="context-card ctx-1">
+        <h5>🏫 Programa ATENEO</h5>
+        <p>Nivelación en competencias básicas para estudiantes con desempeño bajo en matemáticas o razonamiento cuantitativo (percentil &lt;30 en Saber 11). Tutorías diferenciadas.</p>
+      </div>
+      <div class="context-card ctx-2">
+        <h5>👤 Profesor Consejero</h5>
+        <p>Seguimiento personalizado del proceso de adaptación y desempeño académico desde el primer semestre.</p>
+      </div>
+      <div class="context-card ctx-3">
+        <h5>📐 Curso Nivelatorio</h5>
+        <p>Nivelación en Matemáticas y Lógica (intersemestral): 2 semanas antes de iniciar primer semestre. Dirigido a estudiantes con ICFES RC &lt;40. Cubre lógica proposicional y precálculo.</p>
+      </div>
+      <div class="context-card ctx-4">
+        <h5>💛 Acompañamiento SAFI</h5>
+        <p>Todos los estudiantes cuentan con un profesor consejero asignado desde primer semestre. El programa SAFI brinda apoyo diferenciado en sus líneas: académica, psicosocial, familiar e institucional.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ PERFIL DE EGRESO ══════════════════════ -->
+  <section class="program-section" id="egreso">
+    <h2 class="section-title">Perfil de Egreso · Ingeniería de Sistemas e Informática</h2>
+
+    <div class="sintesis-box egreso-sint">
+      <h3>🏅 Síntesis del Perfil de Egreso</h3>
+      <p>El Ingeniero de Sistemas e Informática de la UPB Bucaramanga es un profesional integral con sólida formación humanista cristiana, científica y tecnológica, capaz de analizar, diseñar, desarrollar, implementar y gestionar soluciones tecnológicas innovadoras que generen valor en contextos organizacionales y sociales. Domina conocimientos en cuatro áreas: Ingeniería de Software, Infraestructura Tecnológica, Transformación Digital y Ciberseguridad. Sus certificaciones UPBpath equivalen a 1–2 años de experiencia junior, posicionándolo directamente en roles de nivel intermedio desde el primer empleo.</p>
+    </div>
+
+    <!-- Dimensiones institucionales -->
+    <h3 class="section-title" style="font-size:1.2rem;margin:24px 0 10px">Dimensiones Institucionales de la Formación</h3>
+    <div class="cap-grid">
+      <div class="cap-card cc-egreso-hum">
+        <h4>✝️ Humana · Cristiana</h4>
+        <p>Orientada al desarrollo de las dimensiones humanas en un mundo de cambios complejos, la comprensión de circunstancias individuales y sociales del hombre, el compromiso responsable con la vida desde la cultura del evangelio y el diálogo entre la Fe y la razón.</p>
+      </div>
+      <div class="cap-card cc-egreso-disc">
+        <h4>🌍 Social</h4>
+        <p>Orientada a educar para el análisis crítico de los desafíos sociales, el compromiso social y político, el desarrollo de las capacidades humanas en el contexto del humanismo cristiano y la construcción de la identidad y el sentido social del conocimiento.</p>
+      </div>
+      <div class="cap-card cc-egreso-prof">
+        <h4>🎓 Académica</h4>
+        <p>Permite el reconocimiento epistemológico de las ciencias y disciplinas, propicia el conocimiento disciplinar, el ejercicio de la docencia investigativa y forma "en y para" la investigación vinculando la investigación en sentido estricto y la investigación en la formación.</p>
+      </div>
+    </div>
+
+    <!-- Propósitos de formación -->
+    <h3 class="section-title" style="font-size:1.2rem;margin:24px 0 10px">Propósitos de Formación por Ciclos</h3>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 20px">
+      <div class="dominio-card dc-sw" style="border-left-color:#9b59b6;background:#f9f2ff">
+        <h4 style="color:#6a0dad">🎓 Ciclo Básico Humanista</h4>
+        <p>Formación integral humana, cristiana y social para construir, a la luz del humanismo cristiano, el sentido de la vida, las relaciones consigo mismo, los otros y Dios, y las relaciones con el entorno para transformarlo de manera responsable e innovadora.</p>
+      </div>
+      <div class="dominio-card dc-infra" style="border-left-color:#2980b9">
+        <h4 style="color:#1a5276">🔬 Ciclo Básico Disciplinar</h4>
+        <p>Fundamentación sólida en ciencias básicas y disciplinares para el pensamiento científico. Proporciona fundamentos matemáticos, algorítmicos y computacionales, desarrollando capacidades de abstracción, modelado y resolución de problemas complejos.</p>
+      </div>
+      <div class="dominio-card dc-td" style="border-left-color:#27ae60;background:#e9f7ef">
+        <h4 style="color:#145a32">💻 Ciclo Profesional</h4>
+        <p>Formación teórico-práctica en Ingeniería de Software, Infraestructura TI, Transformación Digital y Ciberseguridad, con posibilidad de profundización mediante el sistema de Minors.</p>
+      </div>
+      <div class="dominio-card dc-sec" style="border-left-color:#f39c12;background:#fef9ef">
+        <h4 style="color:#7d5c00">🔗 Ciclo de Integración</h4>
+        <p>Capacita para planificar, diseñar e implementar soluciones de TI alineadas a los propósitos misionales de las organizaciones, contemplando criterios de viabilidad, calidad, seguridad y buenas prácticas.</p>
+      </div>
+    </div>
+
+    <!-- Problemas de contexto -->
+    <h3 class="section-title" style="font-size:1.2rem;margin:20px 0 10px">Problemas de Contexto del Ciclo Profesional</h3>
+    <div class="problema-grid">
+      <div class="problema-card pr-1">
+        <h5>🖥️ Arquitectura de Software</h5>
+        <p>Las organizaciones demandan soluciones de software robustas, escalables y mantenibles que integren inteligencia artificial, machine learning y analítica de datos, transformando información en conocimiento accionable mediante sistemas adaptativos e inteligentes.</p>
+      </div>
+      <div class="problema-card pr-2">
+        <h5>☁️ Gestión de Infraestructuras TI</h5>
+        <p>La complejidad de ecosistemas tecnológicos híbridos (on-premise, cloud, edge) requiere profesionales capacitados en arquitecturas distribuidas, automatización de procesos y gestión eficiente de recursos computacionales.</p>
+      </div>
+      <div class="problema-card pr-3">
+        <h5>🔄 Transformación Digital</h5>
+        <p>Las organizaciones enfrentan procesos complejos de digitalización que requieren profesionales capaces de liderar estrategias tecnológicas alineadas con objetivos de negocio, interpretando necesidades organizacionales y proponiendo soluciones innovadoras.</p>
+      </div>
+      <div class="problema-card pr-4">
+        <h5>🔒 Ciberseguridad</h5>
+        <p>Las amenazas cibernéticas crecientes demandan profesionales formados en seguridad basada en riesgos, gestión de incidentes y establecimiento de culturas de ciberseguridad organizacional.</p>
+      </div>
+    </div>
+
+    <!-- Capacidades humanas -->
+    <h3 class="section-title" style="font-size:1.2rem;margin:24px 0 10px">Capacidades Humanas Institucionales por Ciclo</h3>
+    <table class="perfil-table">
+      <thead>
+        <tr>
+          <th class="th-egreso">Ciclo Básico Humanista</th>
+          <th class="th-egreso">Ciclo Básico Disciplinar</th>
+          <th class="th-egreso">Ciclo Profesional</th>
+          <th class="th-egreso">Ciclo de Integración</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pensamiento Crítico — Asumir posición fundamentada desde el análisis para intervenir fenómenos tecnológicos y sociales</td>
+          <td>Pensamiento Sistémico — Comprender la realidad de forma integradora para asumir diferentes perspectivas de solución</td>
+          <td>Pensamiento Sistémico — Integrar conocimientos multidisciplinarios para diseñar arquitecturas tecnológicas complejas</td>
+          <td>Pensamiento Cosmopolita — Comprender responsabilidades globales en contextos tecnológicos internacionales</td>
+        </tr>
+        <tr>
+          <td>Autonomía — Actuar con libertad, responsabilidad y sentido crítico en la toma de decisiones profesionales y personales</td>
+          <td>Pensamiento Crítico — Analizar, sintetizar y asociar información para resolver problemas complejos de computación</td>
+          <td>Imaginación — Desarrollar soluciones creativas e innovadoras ante problemas tecnológicos emergentes</td>
+          <td>Imaginación — Proponer soluciones disruptivas que transformen realidades organizacionales</td>
+        </tr>
+        <tr>
+          <td>Compromiso Social — Comprometerse con los asuntos públicos y la responsabilidad social desde la reflexión abierta</td>
+          <td>Resiliencia — Enfrentar adversidades técnicas con confianza para identificar oportunidades en situaciones complejas</td>
+          <td>Autonomía — Gestionar proyectos tecnológicos con independencia y responsabilidad profesional</td>
+          <td>Autonomía Estratégica — Liderar iniciativas tecnológicas con visión empresarial y emprendedora</td>
+        </tr>
+        <tr>
+          <td>—</td>
+          <td>—</td>
+          <td>Empatía — Comprender necesidades de usuarios y equipos para establecer relaciones profesionales efectivas</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Dominios de competencias -->
+    <h3 class="section-title" style="font-size:1.2rem;margin:24px 0 10px">Dominios de Competencias por Áreas</h3>
+    <div class="dominio-grid">
+      <div class="dominio-card dc-sw">
+        <h4>🖥️ Desarrollo de Software Profesional</h4>
+        <p>Analizar, diseñar, implementar y mantener sistemas basados en software utilizando paradigmas de programación, patrones de diseño, arquitecturas apropiadas y metodologías ágiles para resolver problemas complejos, garantizando calidad, escalabilidad y mantenibilidad a lo largo de todo el ciclo de vida del software.</p>
+      </div>
+      <div class="dominio-card dc-sw" style="border-left-color:#c0392b">
+        <h4>🤖 Inteligencia Artificial y Analítica de Datos</h4>
+        <p>Aplicar técnicas de ciencia de datos, machine learning e inteligencia artificial para desarrollar soluciones inteligentes que extraigan valor de la información, automaticen procesos de decisión y creen sistemas adaptativos que mejoren continuamente su comportamiento.</p>
+      </div>
+      <div class="dominio-card dc-infra">
+        <h4>🌐 Gestión de Infraestructuras TI</h4>
+        <p>Diseñar, implementar y administrar infraestructuras de TI incluyendo sistemas operativos, redes de datos, protocolos de comunicación y arquitecturas de conectividad que garanticen disponibilidad, rendimiento y escalabilidad de servicios críticos para las organizaciones.</p>
+      </div>
+      <div class="dominio-card dc-infra" style="border-left-color:#1a5276">
+        <h4>☁️ Computación en la Nube y DevSecOps</h4>
+        <p>Diseñar e implementar arquitecturas en la nube utilizando principios de elasticidad, alta disponibilidad y recuperación ante desastres, así como automatizar procesos de despliegue, integración y entrega continua (CI/CD) mediante prácticas DevSecOps.</p>
+      </div>
+      <div class="dominio-card dc-td">
+        <h4>🔄 Gestión de Proyectos y Gobierno de TI</h4>
+        <p>Planificar, ejecutar y controlar proyectos tecnológicos aplicando metodologías ágiles y tradicionales, e implementar marcos de gobierno de TI (COBIT, ITIL, ISO 38500) para alinear estrategias tecnológicas con procesos de negocio.</p>
+      </div>
+      <div class="dominio-card dc-td" style="border-left-color:#d68910">
+        <h4>🏢 Transformación Digital y Arquitectura Empresarial</h4>
+        <p>Liderar iniciativas de transformación digital evaluando el impacto de tecnologías emergentes, diseñando estrategias de adopción tecnológica y desarrollando arquitecturas empresariales que integren procesos de negocio, información, aplicaciones y tecnología.</p>
+      </div>
+      <div class="dominio-card dc-sec">
+        <h4>🔐 Gestión de Seguridad de la Información y Criptografía</h4>
+        <p>Implementar políticas, controles y procesos de seguridad basados en estándares internacionales (ISO 27001, NIST), aplicar técnicas criptográficas para proteger información en reposo y en tránsito, y diseñar sistemas de gestión de seguridad.</p>
+      </div>
+      <div class="dominio-card dc-sec" style="border-left-color:#1e8449">
+        <h4>🕵️ Análisis de Vulnerabilidades y Gestión de Incidentes</h4>
+        <p>Identificar, analizar y mitigar vulnerabilidades mediante técnicas de ethical hacking y pentesting, diseñar e implementar planes de respuesta a incidentes de seguridad y continuidad del negocio, promoviendo culturas de ciberseguridad organizacional.</p>
+      </div>
+    </div>
+
+    <!-- Contextos de desempeño -->
+    <h3 class="section-title" style="font-size:1.2rem;margin:24px 0 10px">Contextos de Desempeño</h3>
+    <div class="info-box">
+      <h4>🌎 Ámbito de Desempeño Profesional</h4>
+      <p>El egresado puede desempeñarse en empresas de desarrollo de software, consultoría TI, servicios financieros, sector energético, hidrocarburos, agroindustria, retail, e-commerce, telecomunicaciones, BPO y empresas en proceso de transformación digital, tanto a nivel nacional como internacional.</p>
+      <p>También puede actuar en entidades gubernamentales que requieran gestión de infraestructuras tecnológicas, gobierno digital, ciberseguridad y transformación digital, así como liderar startups tecnológicas e incubadoras.</p>
+      <p><strong>Regional:</strong> Área metropolitana de Bucaramanga, departamento de Santander y región Nororiental de Colombia. <strong>Nacional:</strong> Principales ciudades y sectores económicos. <strong>Internacional:</strong> Mercados globales facilitados por alianzas con FH Münster (Alemania), Politecnico Milano (Italia) e IMT (Francia).</p>
+    </div>
   </section>
 
 </div><!-- /container -->
