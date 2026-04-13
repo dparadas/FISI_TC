@@ -357,6 +357,328 @@ body{
   .section-nav{gap:8px}
   .nav-button{padding:8px 14px;font-size:.88rem}
 }
+
+/* ── NAV CHYC ── */
+.nav-chyc{background:linear-gradient(135deg,#5d4037,#8d6e63)}
+
+/* ── CHYC SECTION ── */
+.chyc-intro-box{
+  background:linear-gradient(135deg,#3e2723,#5d4037);
+  border-radius:14px;padding:22px 28px;margin:18px 0;color:#efebe9;
+}
+.chyc-intro-box h3{color:#ffcc80;margin:0 0 10px;font-size:1.05rem}
+.chyc-intro-box p{font-size:.86rem;line-height:1.7;margin:4px 0}
+.chyc-intro-box strong{color:#ffe0b2}
+
+/* Sub-tabs MCHyC */
+.chyc-tabs{
+  display:flex;gap:10px;flex-wrap:wrap;
+  justify-content:center;margin:18px 0 20px;
+}
+.chyc-tab{
+  padding:8px 20px;border-radius:18px;
+  border:2px solid #8d6e63;background:#fff;
+  color:#5d4037;font-weight:700;cursor:pointer;
+  transition:.2s;font-family:inherit;font-size:.93rem;
+}
+.chyc-tab:hover{background:#efebe9}
+.chyc-tab.active{background:#5d4037;color:#fff;border-color:#5d4037}
+.chyc-pane{display:none}
+.chyc-pane.active{display:block}
+
+/* Nivel pills */
+.nivel-pill{
+  display:inline-block;padding:3px 10px;border-radius:12px;
+  font-size:.72rem;font-weight:700;color:#fff;white-space:nowrap;
+}
+.nv-rec{background:#5c6bc0}
+.nv-res{background:#2e7d32}
+.nv-aut{background:#e65100}
+.nv-est{background:#8c1d40}
+
+/* Cycle group headers */
+.chyc-cycle-header{
+  border-radius:10px;padding:12px 18px;margin:22px 0 10px;
+  border-left:5px solid;display:flex;align-items:center;gap:12px;
+}
+.ch-cbfh{background:#f3e5f5;border-color:#9b59b6;color:#4a148c}
+.ch-prof{background:#e3f2fd;border-color:#1565c0;color:#0d47a1}
+.ch-integ{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20}
+.ch-pfom{background:#fff3e0;border-color:#e65100;color:#bf360c}
+.chyc-cycle-header .ch-icon{font-size:1.5rem;flex-shrink:0}
+.chyc-cycle-header h4{font-size:1rem;font-weight:700;margin:0 0 2px}
+.chyc-cycle-header p{font-size:.82rem;margin:0;opacity:.88;line-height:1.4}
+
+/* Competency row card */
+.comp-row-card{
+  background:#fff;border-radius:12px;padding:16px 18px;
+  margin:10px 0;box-shadow:0 3px 12px rgba(0,0,0,.07);
+  border-top:3px solid #bdc3c7;
+}
+.comp-row-card.cr-cbfh{border-top-color:#9b59b6}
+.comp-row-card.cr-prof{border-top-color:#1565c0}
+.comp-row-card.cr-integ{border-top-color:#2e7d32}
+.comp-row-card.cr-td{border-top-color:#f39c12}
+.comp-row-header{
+  display:flex;justify-content:space-between;
+  align-items:flex-start;gap:12px;margin-bottom:10px;
+  flex-wrap:wrap;
+}
+.comp-row-title{font-size:.92rem;font-weight:700;color:#2c3e50}
+.comp-row-body{font-size:.81rem;color:#5d6d7e;line-height:1.55;margin-bottom:10px}
+
+/* Nivel rows inside card */
+.nivel-rows{display:flex;flex-direction:column;gap:7px;margin-top:10px}
+.nivel-row{
+  display:grid;grid-template-columns:90px 1fr 1fr;gap:10px;
+  align-items:start;background:#f8f9fa;border-radius:8px;padding:8px 12px;
+}
+@media(max-width:900px){.nivel-row{grid-template-columns:80px 1fr;}}
+@media(max-width:600px){.nivel-row{grid-template-columns:1fr;}}
+.nivel-row-label{display:flex;align-items:flex-start;padding-top:2px}
+.nivel-row-comp{font-size:.78rem;color:#2c3e50;line-height:1.5}
+.nivel-row-ev{font-size:.76rem;color:#7f8c8d;line-height:1.45}
+.nivel-ev-title{font-weight:700;color:#5d4037;display:block;margin-bottom:2px;font-size:.74rem}
+
+/* Evidencias & cursos chips */
+.ev-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}
+.ev-chip{
+  background:#f5f5f5;border:1px solid #ddd;
+  border-radius:8px;padding:2px 8px;font-size:.73rem;color:#455a64;
+}
+.ev-chip.curso{background:#e3f2fd;border-color:#90caf9;color:#0d47a1}
+.ev-chip.evidencia{background:#f3e5f5;border-color:#ce93d8;color:#4a148c}
+.ev-chip.proyecto{background:#e8f5e9;border-color:#a5d6a7;color:#1b5e20}
+
+/* Problem box */
+.problema-chyc{
+  background:#fafafa;border-left:4px solid #8d6e63;
+  border-radius:0 8px 8px 0;padding:10px 14px;
+  margin-bottom:12px;font-size:.82rem;color:#3e2723;line-height:1.55;
+}
+.problema-chyc strong{color:#5d4037;display:block;font-size:.75rem;
+  text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+
+/* PFOM table — Plan de Formación */
+.pfom-area-card{
+  background:#fff;border-radius:14px;padding:20px;
+  margin:14px 0;box-shadow:0 4px 14px rgba(0,0,0,.08);
+  border-top:4px solid;
+}
+.pfom-pensamiento{border-top-color:#1565c0}
+.pfom-colaborativo{border-top-color:#2e7d32}
+.pfom-articulacion{border-top-color:#8c1d40}
+.pfom-area-card h4{font-size:1rem;font-weight:700;color:#2c3e50;margin:0 0 6px}
+.pfom-area-card .pfom-desc{font-size:.82rem;color:#5d6d7e;line-height:1.55;margin-bottom:14px}
+
+.pfom-niveles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:10px 0}
+@media(max-width:1000px){.pfom-niveles{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.pfom-niveles{grid-template-columns:1fr}}
+.pfom-nivel-col{border-radius:10px;padding:12px;border-top:3px solid}
+.pnc-rec{border-top-color:#5c6bc0;background:#f5f7ff}
+.pnc-res{border-top-color:#2e7d32;background:#f1f8f2}
+.pnc-aut{border-top-color:#e65100;background:#fff8f3}
+.pnc-est{border-top-color:#8c1d40;background:#fdf2f4}
+.pfom-nivel-col h5{font-size:.77rem;font-weight:700;margin:0 0 7px;text-transform:uppercase;letter-spacing:.05em}
+.pfom-nivel-col p{font-size:.76rem;color:#2c3e50;margin:0;line-height:1.5}
+.pfom-ev-row{
+  background:#f5f5f5;border-radius:8px;padding:10px 14px;
+  margin-top:12px;display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start;
+}
+.pfom-ev-group{flex:1;min-width:200px}
+.pfom-ev-group strong{font-size:.74rem;color:#5d4037;display:block;margin-bottom:5px;text-transform:uppercase;letter-spacing:.04em}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — MÓVIL PRIMERO
+   Breakpoints: 480 · 600 · 768 · 1024
+   ═══════════════════════════════════════════ */
+
+/* ── 1024px: tablets landscape ── */
+@media(max-width:1024px){
+  .context-grid{grid-template-columns:repeat(2,1fr)}
+  .cert-grid{grid-template-columns:repeat(2,1fr)}
+  .pfom-niveles{grid-template-columns:repeat(2,1fr)}
+  .nivel-row{grid-template-columns:80px 1fr}
+  .nivel-row-ev{display:none} /* oculta columna evidencias en tablet para no colapsar */
+}
+
+/* ── 768px: tablets portrait / móviles grandes ── */
+@media(max-width:768px){
+  /* Layout base */
+  body{padding:10px}
+  .container{padding:16px 14px;border-radius:12px}
+
+  /* Header */
+  .header h1{font-size:1.45rem}
+  .header p{font-size:.82rem}
+  .header .sub{font-size:.78rem}
+
+  /* Créditos */
+  .credits-summary{grid-template-columns:repeat(2,1fr);gap:10px}
+  .credit-card{padding:14px 10px}
+  .credit-card .number{font-size:1.9rem}
+  .credit-card h4{font-size:.82rem}
+
+  /* Nav principal */
+  .section-nav{gap:6px;margin:14px 0 18px}
+  .nav-button{padding:7px 12px;font-size:.82rem;border-radius:20px}
+
+  /* Semestres */
+  .semesters-grid{grid-template-columns:1fr}
+  .semesters-grid.triple{grid-template-columns:1fr}
+  .trio-group{padding:14px 10px}
+  .ciclo-timeline{flex-direction:column}
+  .cphase-arr{display:none}
+  .comp-grid{grid-template-columns:1fr}
+  .ciclo-tbl{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap}
+
+  /* Perfiles */
+  .cap-grid{grid-template-columns:1fr}
+  .dominio-grid{grid-template-columns:1fr}
+  .context-grid{grid-template-columns:1fr}
+  .problema-grid{grid-template-columns:1fr}
+  .perfil-table{font-size:.78rem}
+  .perfil-table td,.perfil-table th{padding:8px 10px}
+
+  /* Minors */
+  .minors-tabs{gap:6px}
+  .minor-tab{padding:6px 12px;font-size:.84rem}
+
+  /* Certs */
+  .cert-grid{grid-template-columns:1fr}
+
+  /* CHyC — sub-tabs */
+  .chyc-tabs{gap:6px}
+  .chyc-tab{padding:7px 12px;font-size:.84rem}
+
+  /* CHyC — cycle headers */
+  .chyc-cycle-header{padding:10px 14px;gap:10px}
+  .chyc-cycle-header .ch-icon{font-size:1.2rem}
+  .chyc-cycle-header h4{font-size:.9rem}
+  .chyc-cycle-header p{font-size:.77rem}
+
+  /* CHyC — nivel rows: colapsa a 1 columna, muestra evidencias */
+  .nivel-row{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+  .nivel-row-ev{display:block} /* re-muestra tras ocultarlo en 1024 */
+  .nivel-row-label{margin-bottom:2px}
+  .nivel-row-comp{font-size:.8rem}
+  .nivel-row-ev{font-size:.77rem}
+
+  /* CHyC — comp row cards */
+  .comp-row-card{padding:12px 14px}
+  .comp-row-header{flex-direction:column;gap:6px}
+  .comp-row-body{font-size:.79rem}
+
+  /* CHyC — pfom niveles */
+  .pfom-niveles{grid-template-columns:1fr}
+  .pfom-area-card{padding:14px}
+  .pfom-ev-row{flex-direction:column}
+  .pfom-ev-group{min-width:0;width:100%}
+
+  /* Evidencias chips */
+  .ev-chips{gap:4px}
+  .ev-chip{font-size:.7rem;padding:2px 6px}
+
+  /* Info / warning boxes */
+  .info-box,.warning-box,.success-box,.note-box{padding:12px 14px}
+  .sintesis-box{padding:16px 18px}
+  .legal-box{padding:16px 18px}
+  .chyc-intro-box{padding:16px 18px}
+
+  /* Section title */
+  .section-title{font-size:1.25rem}
+}
+
+/* ── 600px: móviles medianos ── */
+@media(max-width:600px){
+  .credits-summary{grid-template-columns:1fr}
+  .credit-card .number{font-size:2rem}
+
+  /* Nav: scroll horizontal en una sola fila */
+  .section-nav{
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    justify-content:flex-start;
+    padding-bottom:6px;
+    scrollbar-width:none;
+  }
+  .section-nav::-webkit-scrollbar{display:none}
+  .nav-button{flex-shrink:0;white-space:nowrap;font-size:.78rem;padding:7px 11px}
+
+  /* Sub-tabs CHyC también scrollables */
+  .chyc-tabs,.minors-tabs{
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    justify-content:flex-start;
+    padding-bottom:4px;
+    scrollbar-width:none;
+  }
+  .chyc-tabs::-webkit-scrollbar,.minors-tabs::-webkit-scrollbar{display:none}
+  .chyc-tab,.minor-tab{flex-shrink:0;white-space:nowrap}
+
+  /* Semester cards */
+  .semester-detail-card{padding:12px 12px}
+  .subject-item{padding:10px 10px}
+  .subject-name{font-size:.82rem}
+  .subject-description{font-size:.76rem}
+
+  /* Cycle banners */
+  .cycle-banner{padding:10px 12px;gap:10px}
+  .cycle-banner .icon{font-size:1.3rem}
+  .cycle-banner h4{font-size:.88rem}
+  .cycle-banner p{font-size:.79rem}
+
+  /* Cutlines */
+  .cutline{padding:10px 14px}
+  .cutline h4{font-size:.88rem}
+
+  /* Comp cards */
+  .comp-card{padding:14px}
+
+  /* Tabla ciclo propedéutico */
+  .ciclo-tbl{font-size:.76rem}
+  .ciclo-tbl td,.ciclo-tbl th{padding:6px 8px}
+}
+
+/* ── 480px: móviles pequeños ── */
+@media(max-width:480px){
+  body{padding:6px}
+  .container{padding:12px 10px;border-radius:8px}
+  .header h1{font-size:1.2rem}
+  .header p{font-size:.77rem}
+  .credit-card{padding:12px 8px}
+  .credit-card h4{font-size:.75rem}
+  .credit-card .number{font-size:1.7rem}
+  .credit-card .label{font-size:.72rem}
+  .nav-button{font-size:.74rem;padding:6px 9px}
+  .section-title{font-size:1.1rem;margin:0 0 12px}
+
+  /* Nivel pills más pequeños */
+  .nivel-pill{font-size:.65rem;padding:2px 7px}
+  .pill{font-size:.66rem;padding:2px 6px}
+
+  /* Ocultar descripción asignatura en semestres para ahorrar espacio */
+  .subject-description{display:none}
+
+  /* CHyC */
+  .chyc-intro-box{padding:12px 14px}
+  .chyc-intro-box h3{font-size:.9rem}
+  .chyc-intro-box p{font-size:.78rem}
+  .comp-row-title{font-size:.82rem}
+  .comp-row-body{font-size:.75rem}
+
+  /* Ocultar columna de evidencias en nivel-row en pantallas muy pequeñas */
+  .nivel-row-ev{display:none}
+
+  /* pfom */
+  .pfom-nivel-col{padding:10px}
+  .pfom-nivel-col p{font-size:.72rem}
+}
 </style>
 </head>
 <body>
@@ -411,6 +733,7 @@ body{
 	<button class="nav-button nav-certs" data-section="certs">🏆 Certificaciones UPBpath</button>
     <button class="nav-button nav-ingreso" data-section="ingreso">🎯 Perfil de Ingreso</button>
     <button class="nav-button nav-egreso" data-section="egreso">🏅 Perfil de Egreso</button>
+    <button class="nav-button nav-chyc" data-section="chyc">🗺️ Mapa CHyC</button>
     <button class="nav-button nav-ciclo" data-section="ciclo">🎓 Ciclo Propedéutico</button>
   </div>
 
@@ -423,7 +746,7 @@ body{
       <p><strong>Matemáticas · Cálculo (9 cr):</strong> Cálculo Diferencial (S1) · Cálculo Integral (S2) · Cálculo Vectorial (S3)</p>
       <p><strong>Matemáticas · Otras (10 cr):</strong> Álgebra Lineal (S2) · Matemáticas Discretas (S2) · Estadística 4 cr (S3)</p>
       <p><strong>Ciencias Físicas (4 cr):</strong> Física Mecánica y Computacional (S3)</p>
-      <p><strong>Ciencias de la Computación (10 cr):</strong> Algoritmia y Programación (S1) · Estructuras de Datos soportadas en Web (S3) · Análisis y Diseño de Algoritmos (S5)</p>
+      <p><strong>Ciencias de la Computación (10 cr):</strong> Algoritmia y Programación (S1) · Estructuras de Datos en Ecosistemas Web (S3) · Análisis y Diseño de Algoritmos (S5)</p>
       <p style="font-weight:700;color:#1976d2;margin-top:8px">TOTAL: 33 créditos ≥ 30 requeridos ✅ — Supera el mínimo ABET en 3 créditos</p>
     </div>
 
@@ -501,7 +824,7 @@ body{
             <div class="subject-description">Lógica proposicional, teoría de conjuntos, grafos y combinatoria. Base ABET.</div>
           </li>
           <li class="subject-item si-web">
-            <div class="subject-name">Programación Orientada a Objetos basada en Web <span class="subject-credits">3</span></div>
+            <div class="subject-name">Programación Orientada a Objetos en Ecosistemas Web <span class="subject-credits">3</span></div>
             <div class="subject-description">OOP (herencia, polimorfismo, encapsulamiento) con DOM, componentes de interfaz y patrones MVC como contexto de práctica.</div>
           </li>
           <li class="subject-item">
@@ -535,7 +858,7 @@ body{
             <div class="subject-description">Probabilidad, distribuciones, pruebas de hipótesis, regresión y estadística computacional R/Python. Base ABET.</div>
           </li>
           <li class="subject-item si-web">
-            <div class="subject-name">Estructuras de Datos soportadas en Web <span class="subject-credits">3</span></div>
+            <div class="subject-name">Estructuras de Datos en Ecosistemas Web <span class="subject-credits">3</span></div>
             <div class="subject-description">Listas, árboles, grafos, colas. Virtual DOM, estado reactivo y colas de eventos como contextos. Base ABET CS.</div>
           </li>
           <li class="subject-item">
@@ -908,7 +1231,7 @@ body{
 
     <div class="success-box" style="margin-top:20px">
       <h4>💡 Las tres experiencias integradoras del programa</h4>
-      <p>📌 <strong>Técnico Profesional (S3):</strong> Proyecto de Aula en Estructuras de Datos soportadas en Web — aplicación web funcional que evidencia el dominio del ciclo técnico.</p>
+      <p>📌 <strong>Técnico Profesional (S3):</strong> Proyecto de Aula en Estructuras de Datos en Ecosistemas Web — aplicación web funcional que evidencia el dominio del ciclo técnico.</p>
       <p>📌 <strong>Tecnólogo (S6):</strong> Proyecto Integrador I — solución TI completa que integra competencias de S1–S6 y refrenda el título de Tecnólogo.</p>
       <p>📌 <strong>Ingeniero (S7+S8):</strong> Capstone (Trabajo de Grado) + Práctica Profesional obligatoria — el binomio que completa la formación como Ingeniero de Sistemas e Informática.</p>
     </div>
@@ -1019,7 +1342,7 @@ body{
         <tr><td rowspan="6" style="background:#f5eeff;color:#6a0dad;font-weight:700;vertical-align:middle">S3</td><td>Cálculo Vectorial</td><td>3</td><td>ABET · Mat.</td><td><span class="pill p-tp">T.P.</span></td></tr>
         <tr><td>Física Mecánica y Computacional</td><td>4</td><td>ABET · Física</td><td><span class="pill p-tp">T.P.</span></td></tr>
         <tr><td>Estadística Descriptiva e Inferencial</td><td>4</td><td>ABET · Mat.</td><td><span class="pill p-tp">T.P.</span></td></tr>
-        <tr><td>Estructuras de Datos soportadas en Web ★</td><td>3</td><td>ABET · CS</td><td><span class="pill p-tp">T.P.</span></td></tr>
+        <tr><td>Estructuras de Datos en Ecosistemas Web ★</td><td>3</td><td>ABET · CS</td><td><span class="pill p-tp">T.P.</span></td></tr>
         <tr><td>Bases de Datos</td><td>3</td><td>Profesional</td><td><span class="pill p-tp">T.P.</span></td></tr>
         <tr><td>Lengua y Cultura</td><td>2</td><td>CBFH</td><td><span class="pill p-tp">T.P.</span></td></tr>
         <tr class="cut-tp"><td colspan="5">🎓 CORTE TÉCNICO PROFESIONAL · 51 créditos · Técnico Profesional en Desarrollo de Software</td></tr>
@@ -1302,6 +1625,583 @@ body{
     </div>
   </section>
 
+  <!-- ═══════════════════════════ MAPA CHYC ═══════════════════════════ -->
+  <!-- ═══════════════════════════ MAPA CHYC ═══════════════════════════ -->
+  <section class="program-section" id="chyc">
+    <h2 class="section-title">Mapa de Capacidades Humanas y Competencias · FISI</h2>
+
+    <div class="chyc-intro-box">
+      <h3>📜 Marco Institucional UPB — Capacidades Humanas y Competencias</h3>
+      <p>El Mapa de Capacidades Humanas y Competencias (CHyC) articula la <strong>formación integral</strong> del Ingeniero de Sistemas e Informática con el modelo pedagógico UPB de inspiración cristiana humanista. Define, por ciclo formativo, los <strong>propósitos, resultados de aprendizaje generales, capacidades humanas, competencias, criterios de competencia, nivel de desarrollo (Receptivo → Estratégico), evidencias y cursos responsables</strong>.</p>
+      <p>Requisito de verificación para el <strong>Registro Calificado MEN (Decreto 1330/2019)</strong>. Cada asignatura con Proyecto de Mediación Docente (PMD) debe señalar los criterios de competencia y el nivel de desempeño que desarrolla.</p>
+    </div>
+
+    <!-- Sub-tabs -->
+    <div class="chyc-tabs">
+      <button class="chyc-tab active" data-chyc="filoa">🎓 FILO A — Ciclos Formativos</button>
+      <button class="chyc-tab" data-chyc="ejes">🔬 Ejes de Formación Transversal</button>
+    </div>
+
+    <!-- ══ PANE 1: FILO A ══ -->
+    <div class="chyc-pane active" id="chyc-filoa">
+
+      <!-- Leyenda niveles -->
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;align-items:center">
+        <span style="font-size:.82rem;font-weight:700;color:#5d4037">Niveles de desarrollo:</span>
+        <span class="nivel-pill nv-rec">1 · Receptivo</span>
+        <span class="nivel-pill nv-res">2 · Resolutivo</span>
+        <span class="nivel-pill nv-aut">3 · Autónomo</span>
+        <span class="nivel-pill nv-est">4 · Estratégico</span>
+      </div>
+
+      <!-- ── 1. CICLO BÁSICO DE FORMACIÓN HUMANISTA ── -->
+      <div class="chyc-cycle-header ch-cbfh">
+        <div class="ch-icon">🕊️</div>
+        <div>
+          <h4>Ciclo Básico de Formación Humanista (CBFH)</h4>
+          <p>El Ciclo Básico de Formación Humanista tiene como propósito la formación integral humana, cristiana y social para construir, a la luz de los principios del humanismo cristiano, el sentido de la vida, las relaciones consigo mismo, los otros y Dios, y las relaciones con el entorno para transformarlo de manera responsable e innovadora.</p>
+        </div>
+      </div>
+      <div class="warning-box info-box" style="background:#fff8e1;border-left-color:#f9a825;border-radius:12px;padding:20px 24px;margin:10px 0 22px">
+        <h4 style="color:#f57f17;margin:0 0 10px;font-size:1rem">⏳ Pendiente de definición institucional · Ver Mapa CH y C del CBFH</h4>
+        <p style="color:#5d4037;font-size:.88rem;line-height:1.7;margin:0">
+          <strong>Esta parte del mapa será institucional y definida por el Comité Central del CBFH — Aprobada por CAG.</strong><br>
+          No debe ser diligenciada por el programa. En próximas semanas se enviará a cada Escuela.
+        </p>
+      </div>
+
+      <!-- ── 2. CICLO BÁSICO DISCIPLINAR ── -->
+      <div class="chyc-cycle-header ch-prof" style="background:#ede7f6;border-color:#7b1fa2;color:#4a148c">
+        <div class="ch-icon">📐</div>
+        <div>
+          <h4>Ciclo Básico Disciplinar</h4>
+          <p>Proporcionar los fundamentos matemáticos y físicos que sustentan el ejercicio riguroso de la Ingeniería de Sistemas e Informática que le permitan desarrollar el pensamiento científico en la solución de problemas del mundo real.</p>
+        </div>
+      </div>
+
+      <div class="problema-chyc">
+        <strong>Resultados de Aprendizaje Generales</strong>
+        1. Aplica conceptos de cálculo diferencial, integral, vectorial, álgebra lineal y matemáticas discretas para modelar y resolver problemas matemáticos de la ingeniería de sistemas con rigor formal.<br>
+        2. Utiliza estadística descriptiva e inferencial y principios de física mecánica computacional para analizar e interpretar fenómenos físicos y probabilísticos relevantes en sistemas de ingeniería.
+      </div>
+
+      <div class="comp-row-card" style="border-top-color:#7b1fa2">
+        <div class="comp-row-header">
+          <div class="comp-row-title">Capacidad: Vida y Ética &nbsp;·&nbsp; Competencia: Razonamiento cuantitativo</div>
+        </div>
+        <div class="comp-row-body">
+          <strong>Formulación:</strong> Aplica con rigor científico los fundamentos matemáticos y principios de física para modelar, analizar y resolver problemas de la ingeniería de sistemas con pensamiento crítico y posición fundamentada desde el análisis, la síntesis y la asociación.
+        </div>
+        <div class="nivel-rows">
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-rec">1</span></div>
+            <div class="nivel-row-comp">Comprende y aplica fundamentos de cálculo diferencial, integral, álgebra lineal y matemáticas discretas para modelar y resolver problemas matemáticos de la ingeniería de sistemas.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Evidencias</span>
+              <div class="ev-chips">
+                <span class="ev-chip evidencia">Evaluaciones escritas</span>
+                <span class="ev-chip evidencia">Talleres</span>
+                <span class="ev-chip evidencia">Quices</span>
+                <span class="ev-chip proyecto">Proyectos de aula</span>
+              </div>
+              <span class="nivel-ev-title" style="margin-top:6px">Cursos</span>
+              <div class="ev-chips">
+                <span class="ev-chip curso">Cálculo Diferencial</span>
+                <span class="ev-chip curso">Cálculo Integral</span>
+                <span class="ev-chip curso">Álgebra Lineal</span>
+                <span class="ev-chip curso">Matemáticas Discretas</span>
+              </div>
+            </div>
+          </div>
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-res">2</span></div>
+            <div class="nivel-row-comp">Resuelve problemas aplicando cálculo vectorial, estadística descriptiva e inferencial y física mecánica computacional para analizar e interpretar fenómenos en sistemas de ingeniería.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Evidencias</span>
+              <div class="ev-chips">
+                <span class="ev-chip evidencia">Evaluaciones escritas</span>
+                <span class="ev-chip evidencia">Laboratorios</span>
+                <span class="ev-chip evidencia">Talleres</span>
+                <span class="ev-chip proyecto">Proyectos de aula</span>
+              </div>
+              <span class="nivel-ev-title" style="margin-top:6px">Cursos</span>
+              <div class="ev-chips">
+                <span class="ev-chip curso">Cálculo Vectorial</span>
+                <span class="ev-chip curso">Estadística Descriptiva e Inferencial</span>
+                <span class="ev-chip curso">Física Mecánica y Computacional</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 3. CICLO PROFESIONAL ── -->
+      <div class="chyc-cycle-header ch-prof">
+        <div class="ch-icon">⚙️</div>
+        <div>
+          <h4>Ciclo Profesional</h4>
+          <p>Desarrollar en el estudiante las competencias disciplinares de la Ingeniería de Sistemas e Informática mediante una progresión pedagógica intencionada que articula el rigor científico y técnico con la responsabilidad ética y el humanismo cristiano propios de la formación UPB, habilitándolo para identificar, formular y resolver problemas complejos del campo de la ingeniería con criterio propio, visión sistémica y capacidad de adaptación a entornos tecnológicos en permanente evolución.</p>
+        </div>
+      </div>
+
+      <!-- RAG 1: Arquitectura de Software -->
+      <div class="comp-row-card cr-prof">
+        <div class="comp-row-header">
+          <div class="comp-row-title">RAG 1 · Arquitectura de Software</div>
+        </div>
+        <div class="comp-row-body">
+          <strong>Resultado de Aprendizaje General:</strong> Diseña, implementa y evalúa soluciones de software con arquitecturas modernas y metodologías ágiles, desde programación fundamental hasta sistemas distribuidos.<br><br>
+          <strong>Capacidad (Estética / Imaginación):</strong> Considera e interioriza otras formas de pensamiento arquitectónico para diseñar soluciones de software que trasciendan el estado actual de la técnica, configurando escenarios de mayor valor y creando posibilidades inéditas de construcción de sistemas complejos.<br><br>
+          <strong>Formulación de competencia:</strong> Diseña, implementa y evalúa soluciones de software progresivamente complejas —desde algoritmia y POO (S1–S2) hasta arquitecturas de microservicios y sistemas distribuidos (S5–S6)— aplicando patrones de diseño (SOLID, CQRS, Repository), metodologías ágiles (Scrum, CI/CD) y análisis de algoritmos, satisfaciendo requisitos funcionales y no funcionales verificables. Se complementa con el Minor de Arquitectura de Software en S7.
+        </div>
+        <div class="nivel-rows">
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-rec">1</span></div>
+            <div class="nivel-row-comp">Comprende y aplica fundamentos de algoritmia, control de flujo y programación orientada a objetos para construir soluciones computacionales en entornos web.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Evidencias</span>
+              <div class="ev-chips"><span class="ev-chip evidencia">Quices</span><span class="ev-chip proyecto">Proyectos de aula</span><span class="ev-chip evidencia">Talleres</span><span class="ev-chip evidencia">Laboratorios</span><span class="ev-chip evidencia">Documentos escritos</span></div>
+              <span class="nivel-ev-title" style="margin-top:6px">Cursos</span>
+              <div class="ev-chips"><span class="ev-chip curso">Algoritmia y Programación</span><span class="ev-chip curso">Programación Orientada a Objetos en Ecosistemas Web </span><span class="ev-chip curso">Análisis y Diseño de Sistemas</span></div>
+            </div>
+          </div>
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-res">2</span></div>
+            <div class="nivel-row-comp">Selecciona estructuras de datos apropiadas (listas, árboles, grafos, tablas hash) y especifica requisitos de software (UML, historias de usuario) para diseñar e implementar aplicaciones web con pruebas automatizadas.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Evidencias</span>
+              <div class="ev-chips"><span class="ev-chip evidencia">Quices</span><span class="ev-chip proyecto">Proyectos de aula</span><span class="ev-chip evidencia">Talleres</span><span class="ev-chip evidencia">Laboratorios</span><span class="ev-chip evidencia">Documentos escritos</span></div>
+              <span class="nivel-ev-title" style="margin-top:6px">Cursos</span>
+              <div class="ev-chips"><span class="ev-chip curso">Estructuras de Datos en Ecosistemas Web</span><span class="ev-chip curso">Ingeniería de Software</span><span class="ev-chip curso">Bases de Datos</span><span class="ev-chip curso">Desarrollo de Aplicaciones Web</span></div>
+            </div>
+          </div>
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-aut">3</span></div>
+            <div class="nivel-row-comp">Diseña arquitecturas de software aplicando patrones (SOLID, MVC, CQRS) y analiza la complejidad de algoritmos para construir sistemas mantenibles, eficientes y escalables.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Evidencias</span>
+              <div class="ev-chips"><span class="ev-chip evidencia">Quices</span><span class="ev-chip proyecto">Proyectos de aula</span><span class="ev-chip evidencia">Talleres</span><span class="ev-chip evidencia">Laboratorios</span><span class="ev-chip evidencia">Documentos escritos</span></div>
+              <span class="nivel-ev-title" style="margin-top:6px">Cursos</span>
+              <div class="ev-chips"><span class="ev-chip curso">Análisis y Diseño de Algoritmos</span><span class="ev-chip curso">Administración de Bases de Datos</span><span class="ev-chip curso">Arquitectura de Software y Microservicios</span></div>
+            </div>
+          </div>
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-aut">3</span></div>
+            <div class="nivel-row-comp">Diseña e integra servicios distribuidos (microservicios, APIs REST/GraphQL) y gestiona proyectos de software con metodologías ágiles y control de versiones profesional.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Cursos</span>
+              <div class="ev-chips"><span class="ev-chip curso">Sistemas Distribuidos</span><span class="ev-chip curso">Gestión de Proyectos TI</span><span class="ev-chip proyecto">Proyecto Integrador I</span></div>
+            </div>
+          </div>
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-est">4</span></div>
+            <div class="nivel-row-comp">Integra estratégicamente competencias de arquitectura de software para entregar soluciones de ingeniería de impacto real, profundizando en arquitectura avanzada, APIs y DevOps a través del Minor.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Evidencias</span>
+              <div class="ev-chips"><span class="ev-chip evidencia">Quices</span><span class="ev-chip proyecto">Proyectos de aula</span><span class="ev-chip evidencia">Talleres</span><span class="ev-chip evidencia">Laboratorios</span><span class="ev-chip evidencia">Documentos escritos</span></div>
+              <span class="nivel-ev-title" style="margin-top:6px">Cursos</span>
+              <div class="ev-chips"><span class="ev-chip curso">Arquitectura de Software Avanzado</span><span class="ev-chip curso">Diseño y Desarrollo de APIs</span><span class="ev-chip curso">Arquitectura en la Nube</span><span class="ev-chip curso">DevOps y CI/CD</span><span class="ev-chip proyecto">Proyecto Capstone / Trabajo de Grado</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RAG 2: Gestión de Infraestructura de TI -->
+      <div class="comp-row-card cr-prof">
+        <div class="comp-row-header">
+          <div class="comp-row-title">RAG 2 · Gestión de Infraestructura de TI</div>
+        </div>
+        <div class="comp-row-body">
+          <strong>Resultado de Aprendizaje General:</strong> Gestiona y opera infraestructuras tecnológicas cloud y on-premise garantizando disponibilidad, desempeño y continuidad operativa.<br><br>
+          <strong>Capacidad (Vida y Estética / Resiliencia):</strong> Enfrenta las adversidades técnicas, las fallas de infraestructura y los incidentes operativos con confianza y claridad, identificando las oportunidades de mejora que ofrecen las situaciones complejas de operación real.<br><br>
+          <strong>Formulación de competencia:</strong> Diseña, configura y opera infraestructuras tecnológicas —redes de datos, sistemas operativos, arquitecturas de conectividad, cloud y bases de datos— con progresión desde nivel Receptivo en S2 hasta nivel Autónomo en S6. Los resultados se profundizan en el Minor de Gestión de Infraestructura TI (GITI) en S7.
+        </div>
+        <div class="nivel-rows">
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-rec">1</span></div>
+            <div class="nivel-row-comp">Comprende y modela arquitecturas de sistemas tecnológicos identificando componentes, relaciones e interdependencias para diseñar soluciones de infraestructura.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Evidencias</span>
+              <div class="ev-chips"><span class="ev-chip evidencia">Quices</span><span class="ev-chip proyecto">Proyectos de aula</span><span class="ev-chip evidencia">Talleres</span><span class="ev-chip evidencia">Laboratorios</span><span class="ev-chip evidencia">Documentos escritos</span></div>
+              <span class="nivel-ev-title" style="margin-top:6px">Cursos</span>
+              <div class="ev-chips"><span class="ev-chip curso">Sistemas Operativos</span></div>
+            </div>
+          </div>
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-res">2</span></div>
+            <div class="nivel-row-comp">Resuelve la gestión de sistemas operativos en entornos virtualizados y la configuración de redes de datos empresariales (LAN/WAN/SDN) con protocolos de enrutamiento y conmutación.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Evidencias</span>
+              <div class="ev-chips"><span class="ev-chip evidencia">Quices</span><span class="ev-chip proyecto">Proyectos de aula</span><span class="ev-chip evidencia">Talleres</span><span class="ev-chip evidencia">Laboratorios</span><span class="ev-chip evidencia">Documentos escritos</span></div>
+              <span class="nivel-ev-title" style="margin-top:6px">Cursos</span>
+              <div class="ev-chips"><span class="ev-chip curso">Redes de Datos y Conectividad</span></div>
+            </div>
+          </div>
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-aut">3</span></div>
+            <div class="nivel-row-comp">Diseña arquitecturas de conectividad escalables integrando VPN, contenedores (Docker/Kubernetes), IaC (Terraform) y administra bases de datos en entornos de producción con criterio argumentado.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Cursos</span>
+              <div class="ev-chips"><span class="ev-chip curso">Arquitectura de Conectividad</span><span class="ev-chip curso">Administración de Bases de Datos</span></div>
+            </div>
+          </div>
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-aut">3</span></div>
+            <div class="nivel-row-comp">Planifica y gestiona con criterio propio infraestructuras de TI —servidores, almacenamiento, red, cloud— garantizando continuidad operativa y optimización de costos.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Cursos</span>
+              <div class="ev-chips"><span class="ev-chip curso">Diseño y Gestión de Infraestructura de TI</span><span class="ev-chip proyecto">Proyecto Integrador I</span></div>
+            </div>
+          </div>
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-est">4</span></div>
+            <div class="nivel-row-comp">Integra estratégicamente infraestructura cloud de alto rendimiento —HPC, IoT, redes híbridas, observabilidad— para diseñar arquitecturas empresariales resilientes a través del Minor GITI.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Evidencias</span>
+              <div class="ev-chips"><span class="ev-chip evidencia">Quices</span><span class="ev-chip proyecto">Proyectos de aula</span><span class="ev-chip evidencia">Talleres</span><span class="ev-chip evidencia">Laboratorios</span><span class="ev-chip evidencia">Documentos escritos</span></div>
+              <span class="nivel-ev-title" style="margin-top:6px">Cursos</span>
+              <div class="ev-chips"><span class="ev-chip curso">Orquestación y Observabilidad</span><span class="ev-chip curso">Computación de Alto Rendimiento — HPC</span><span class="ev-chip curso">Arquitectura Híbrida Cloud Networking</span><span class="ev-chip curso">IoT e Industria 4.0</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RAG 3: Transformación Digital -->
+      <div class="comp-row-card cr-td">
+        <div class="comp-row-header">
+          <div class="comp-row-title">RAG 3 · Transformación Digital</div>
+        </div>
+        <div class="comp-row-body">
+          <strong>Resultado de Aprendizaje General:</strong> Diseña estrategias de Transformación Digital aplicando IA, analítica de datos y pensamiento sistémico.<br><br>
+          <strong>Capacidad (Ética / Pensamiento cosmopolita):</strong> Comprende las responsabilidades globales en la Transformación Digital de las organizaciones, reconociendo la interdependencia tecnológica mundial y la ciudadanía digital global al proponer estrategias de TI con impacto sin distinción de fronteras.<br><br>
+          <strong>Formulación de competencia:</strong> Diseña e implementa soluciones de Transformación Digital —con IA, analítica de datos y marcos de gestión empresarial— con progresión desde pensamiento sistémico en S1 hasta nivel Autónomo en S6. Los resultados se profundizan en la Especialización Transformación Digital (S7–S8) al nivel Estratégico mediante el Minor y el Capstone.
+        </div>
+        <div class="nivel-rows">
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-rec">1</span></div>
+            <div class="nivel-row-comp">Comprende los sistemas sociotécnicos y el rol del Ingeniero de Sistemas, aplicando pensamiento sistémico y modelado causal para identificar oportunidades de transformación organizacional.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Evidencias</span>
+              <div class="ev-chips"><span class="ev-chip evidencia">Quices</span><span class="ev-chip proyecto">Proyectos de aula</span><span class="ev-chip evidencia">Talleres</span><span class="ev-chip evidencia">Laboratorios</span><span class="ev-chip evidencia">Documentos escritos</span></div>
+              <span class="nivel-ev-title" style="margin-top:6px">Cursos</span>
+              <div class="ev-chips"><span class="ev-chip curso">Taller de Ingeniería en Sistemas e Informática</span><span class="ev-chip curso">Pensamiento Sistémico</span></div>
+            </div>
+          </div>
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-res">2</span></div>
+            <div class="nivel-row-comp">Resuelve problemas de gestión de datos (SQL/NoSQL) e implementa soluciones de IA Esencial para automatizar procesos y generar valor en organizaciones, aplicando el curso de Transformación Digital.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Cursos</span>
+              <div class="ev-chips"><span class="ev-chip curso">Bases de Datos</span><span class="ev-chip curso">Inteligencia Artificial Esencial</span><span class="ev-chip curso">Transformación Digital</span></div>
+            </div>
+          </div>
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-aut">3</span></div>
+            <div class="nivel-row-comp">Diseña e implementa modelos de Machine Learning y Deep Learning para resolver problemas de predicción, clasificación y optimización en contextos de negocio reales.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Cursos</span>
+              <div class="ev-chips"><span class="ev-chip curso">Machine y Deep Learning</span></div>
+            </div>
+          </div>
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-aut">3</span></div>
+            <div class="nivel-row-comp">Diseña e implementa pipelines de analítica de datos y dashboards ejecutivos para la toma de decisiones basada en evidencia en organizaciones con criterio argumentado.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Cursos</span>
+              <div class="ev-chips"><span class="ev-chip curso">Analítica de Datos para la Toma de Decisiones</span></div>
+            </div>
+          </div>
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-aut">3</span></div>
+            <div class="nivel-row-comp">Integra IA, analítica y gestión de datos para entregar una solución de Transformación Digital de impacto real, articulando visión sistémica con responsabilidad ética y social.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Cursos</span>
+              <div class="ev-chips"><span class="ev-chip curso">Analítica de Datos para la Toma de Decisiones</span><span class="ev-chip proyecto">Proyecto Integrador I</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RAG 4: Ciberseguridad -->
+      <div class="comp-row-card cr-prof" style="border-top-color:#27ae60">
+        <div class="comp-row-header">
+          <div class="comp-row-title">RAG 4 · Ciberseguridad</div>
+        </div>
+        <div class="comp-row-body">
+          <strong>Resultado de Aprendizaje General:</strong> Implementa controles de Ciberseguridad y gestiona riesgos de seguridad digital.<br><br>
+          <strong>Capacidad (Vida y Estética / Resiliencia):</strong> Enfrenta los incidentes de seguridad y las amenazas cibernéticas con confianza y claridad, identificando las oportunidades de mejora para fortalecer la postura de seguridad digital de las organizaciones.<br><br>
+          <strong>Formulación de competencia:</strong> Implementa controles de Ciberseguridad —criptografía, hardening, análisis de vulnerabilidades, régimen jurídico de TI y principios post-cuánticos— para proteger la confidencialidad, integridad, disponibilidad y trazabilidad de activos digitales (S5–S6). Los resultados se profundizan en la Especialización Ciberseguridad (S7–S8) al nivel Estratégico mediante el Minor y el Capstone.
+        </div>
+        <div class="nivel-rows">
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-res">2</span></div>
+            <div class="nivel-row-comp">Resuelve problemas de protección de activos digitales implementando controles de Ciberseguridad —cifrado simétrico/asimétrico, firewall, IDS/IPS, MFA— y comprende el impacto del cómputo cuántico en la criptografía.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Evidencias</span>
+              <div class="ev-chips"><span class="ev-chip evidencia">Quices</span><span class="ev-chip proyecto">Proyectos de aula</span><span class="ev-chip evidencia">Talleres</span><span class="ev-chip evidencia">Laboratorios</span><span class="ev-chip evidencia">Documentos escritos</span></div>
+              <span class="nivel-ev-title" style="margin-top:6px">Cursos</span>
+              <div class="ev-chips"><span class="ev-chip curso">Seguridad e Informática Cuántica</span></div>
+            </div>
+          </div>
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-aut">3</span></div>
+            <div class="nivel-row-comp">Analiza vulnerabilidades con frameworks (OWASP, MITRE ATT&CK), comprende el régimen jurídico de TI y propone planes de remediación documentados con criterio propio.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Cursos</span>
+              <div class="ev-chips"><span class="ev-chip curso">Ciberseguridad y Régimen Jurídico de TI</span></div>
+            </div>
+          </div>
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-aut">3</span></div>
+            <div class="nivel-row-comp">Diseña con criterio propio políticas de seguridad y arquitecturas que incorporan controles post-cuánticos para proteger infraestructuras críticas frente a amenazas emergentes.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Cursos</span>
+              <div class="ev-chips"><span class="ev-chip curso">Seguridad e Informática Cuántica</span><span class="ev-chip curso">Ciberseguridad y Régimen Jurídico de TI</span></div>
+            </div>
+          </div>
+          <div class="nivel-row">
+            <div class="nivel-row-label"><span class="nivel-pill nv-aut">3</span></div>
+            <div class="nivel-row-comp">Gestiona con criterio propio un ciclo completo de respuesta a incidentes de seguridad —detección, contención, erradicación y recuperación— articulando aspectos técnicos y legales.</div>
+            <div class="nivel-row-ev">
+              <span class="nivel-ev-title">Cursos</span>
+              <div class="ev-chips"><span class="ev-chip curso">Ciberseguridad y Régimen Jurídico de TI</span><span class="ev-chip proyecto">Proyecto Integrador I</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 4. CICLO DE INTEGRACIÓN ── -->
+      <div class="chyc-cycle-header ch-integ">
+        <div class="ch-icon">🔗</div>
+        <div>
+          <h4>Ciclo de Integración</h4>
+          <p>Consolidar y profundizar las dos Especializaciones oficiales FISI —Transformación Digital y Ciberseguridad— que formalizan y trascienden en las líneas del programa, llevando las competencias al nivel Estratégico mediante los Minors específicos (S7), el Proyecto Capstone / Trabajo de Grado y la Práctica Profesional obligatoria (S8). El Ingeniero egresado queda habilitado para ingresar directamente al segundo semestre de la respectiva Especialización de posgrado de FISI.</p>
+        </div>
+      </div>
+
+      <!-- Especialización TD -->
+      <div class="comp-row-card cr-integ">
+        <div class="comp-row-header">
+          <div class="comp-row-title">RAG 1 · Especialización Transformación Digital <span class="nivel-pill nv-est" style="margin-left:8px">Estratégico</span></div>
+        </div>
+        <div class="comp-row-body">
+          <strong>Resultado de Aprendizaje General:</strong> Lidera estratégicamente procesos de Transformación Digital —gobernanza, arquitectura empresarial, portafolio digital, liderazgo en entornos digitales— con innovación, compromiso ético y generación de valor sostenible (Especialización FISI — Minor Transformación Digital S7–S8).<br><br>
+          <strong>Capacidad (Ética / Pensamiento cosmopolita):</strong> Lidera con visión de ciudadanía digital global estrategias de Transformación Digital que generan valor organizacional sostenible, reconociendo la interdependencia tecnológica y las responsabilidades globales del Ingeniero en contextos de alta complejidad.<br><br>
+          <strong>Formulación de competencia:</strong> Lidera estratégicamente procesos de Transformación Digital en organizaciones, aplicando gobernanza de TI, arquitectura empresarial convergente, liderazgo digital y operaciones de servicios avanzados (Minor Transformación Digital S7), para generar valor organizacional sostenible.
+        </div>
+        <div class="nivel-rows">
+          <div class="nivel-row" style="grid-template-columns:90px 1fr">
+            <div class="nivel-row-label"><span class="nivel-pill nv-est">4</span></div>
+            <div class="nivel-row-comp">
+              <ul style="margin:0;padding-left:16px;font-size:.79rem;line-height:1.8;color:#2c3e50">
+                <li>Aplica estratégicamente frameworks de gobernanza TI (COBIT, ITIL, TOGAF) para diseñar modelos de valor estratégico de TI que alinean tecnología y negocio con indicadores de impacto medibles.</li>
+                <li>Lidera proyectos de transformación digital complejos aplicando metodologías híbridas de gestión y marcos de liderazgo adaptativo para equipos en entornos digitales distribuidos.</li>
+                <li>Diseña arquitecturas empresariales convergentes que integran tecnología, procesos, datos y personas en una visión holística de transformación organizacional con innovación y creatividad.</li>
+                <li>Gestiona estratégicamente operaciones y servicios digitales avanzados —incluyendo la integración del Capstone con impacto real en una organización— articulando todas las competencias TD con compromiso ético.</li>
+                <li>Demuestra desempeño estratégico en la Práctica Profesional, contribuyendo a procesos reales de Transformación Digital y construyendo plan de desarrollo profesional como especialista.</li>
+              </ul>
+              <div style="margin-top:10px">
+                <span class="nivel-ev-title">Evidencias</span>
+                <div class="ev-chips"><span class="ev-chip evidencia">Estudios de caso</span><span class="ev-chip evidencia">Informes</span><span class="ev-chip evidencia">Presentaciones orales (vídeo)</span><span class="ev-chip proyecto">Portafolio</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Especialización Ciberseguridad -->
+      <div class="comp-row-card cr-integ" style="border-top-color:#c0392b">
+        <div class="comp-row-header">
+          <div class="comp-row-title">RAG 2 · Especialización Ciberseguridad <span class="nivel-pill nv-est" style="margin-left:8px">Estratégico</span></div>
+        </div>
+        <div class="comp-row-body">
+          <strong>Resultado de Aprendizaje General:</strong> Diseña e implementa programas estratégicos de Ciberseguridad —ofensiva/defensiva avanzada, criptografía post-cuántica, ZeroTrust, análisis forense y automatización con IA— con innovación y compromiso ético (Especialización FISI — Minor Ciberseguridad S7–S8).<br><br>
+          <strong>Capacidad (Vida y Estética / Resiliencia):</strong> Enfrenta amenazas cibernéticas avanzadas y escenarios de ataque complejos con fortaleza técnica, identificando las oportunidades estratégicas de cada incidente para elevar la postura de seguridad organizacional con innovación y compromiso ético.<br><br>
+          <strong>Formulación de competencia:</strong> Diseña e implementa estratégicamente programas de Ciberseguridad organizacional —ofensiva/defensiva avanzada, criptografía post-cuántica, ZeroTrust, análisis forense y automatización con IA— mediante el Minor de Ciberseguridad (S7), el Proyecto Capstone y la Práctica Profesional (S8), para acceder a la Especialización en Gobierno y Seguridad Digital FISI.
+        </div>
+        <div class="nivel-rows">
+          <div class="nivel-row" style="grid-template-columns:90px 1fr">
+            <div class="nivel-row-label"><span class="nivel-pill nv-est">4</span></div>
+            <div class="nivel-row-comp">
+              <ul style="margin:0;padding-left:16px;font-size:.79rem;line-height:1.8;color:#2c3e50">
+                <li>Ejecuta operaciones de Ciberseguridad ofensiva y defensiva avanzada —pentesting, red team/blue team, hardening avanzado— con estrategia e innovación para proteger organizaciones en entornos hostiles.</li>
+                <li>Diseña e implementa soluciones de criptografía post-cuántica para proteger infraestructuras críticas frente a la amenaza de computadoras cuánticas, anticipando vulnerabilidades emergentes con visión estratégica.</li>
+                <li>Diseña arquitecturas de Confianza Cero (Zero Trust) para organizaciones, eliminando el perímetro de seguridad tradicional e implementando controles de acceso granulares y verificación continua.</li>
+                <li>Lidera procesos de análisis forense digital y respuesta a incidentes críticos, automatizando la orquestación de seguridad con IA para reducir tiempos de detección y contención.</li>
+                <li>Integra estratégicamente todas las competencias de Ciberseguridad en el Proyecto Capstone con impacto real, y demuestra desempeño de especialista en la Práctica Profesional.</li>
+              </ul>
+              <div style="margin-top:10px">
+                <span class="nivel-ev-title">Evidencias</span>
+                <div class="ev-chips"><span class="ev-chip evidencia">Estudios de caso</span><span class="ev-chip evidencia">Informes</span><span class="ev-chip evidencia">Presentaciones orales (vídeo)</span><span class="ev-chip proyecto">Portafolio</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /chyc-pane filoa -->
+
+    <!-- ══ PANE 2: EJES DE FORMACIÓN ══ -->
+    <div class="chyc-pane" id="chyc-ejes">
+
+      <div class="info-box" style="margin-bottom:20px">
+        <h4>📌 Ejes de Formación Transversal</h4>
+        <p>Los ejes de formación son transversales a todos los semestres y asignaturas del programa. Cada curso debe evidenciar, en su Proyecto de Mediación Docente (PMD), el nivel de desarrollo que alcanza en al menos uno de estos ejes. Los cursos responsables incluyen: Taller de Ingeniería en Sistemas e Informática, Pensamiento Sistémico, Proyecto Integrador I, Proyecto Capstone y Práctica Profesional.</p>
+      </div>
+
+      <!-- EJE 1: TRANSVERSAL DE INVESTIGACIÓN E INNOVACIÓN -->
+      <div class="pfom-area-card pfom-pensamiento">
+        <h4>🔬 Transversal de Investigación e Innovación</h4>
+        <div class="pfom-desc">
+          <strong>Propósito:</strong> Comprender las implicaciones de la investigación y la innovación y sus formas de relación en el abordaje de los problemas complejos del ser humano, valorando el trabajo colaborativo e interconectado desde una mirada transdisciplinar y transcultural.<br><br>
+          <strong>Resultado de Aprendizaje General:</strong> Desarrolla procesos de investigación formativa en Ingeniería de Sistemas e Informática (desde la identificación del problema y el diseño metodológico hasta el análisis de resultados y su comunicación) aplicando enfoques cuantitativos o cualitativos apropiados al campo disciplinar y al nivel de formación, con rigor académico y responsabilidad ética.
+        </div>
+
+        <!-- Competencia 1 -->
+        <div style="background:#eef2ff;border-radius:10px;padding:14px 16px;margin:10px 0">
+          <p style="font-size:.83rem;font-weight:700;color:#1565c0;margin:0 0 6px">Competencia 1 · Investigación e Innovación</p>
+          <p style="font-size:.8rem;color:#2c3e50;margin:0 0 10px"><strong>Capacidad:</strong> Vida y Estética / Pensamiento crítico — Asume una posición fundamentada desde el análisis, la síntesis y la asociación para intervenir los problemas de investigación del campo IS&amp;I, manejando la incertidumbre y la paradoja propias de la generación de nuevo conocimiento científico y tecnológico.</p>
+          <p style="font-size:.8rem;color:#2c3e50;margin:0 0 10px"><strong>Formulación:</strong> Analiza e interpreta la información recolectada que permita dar respuesta al objetivo del problema.</p>
+          <div class="nivel-rows">
+            <div class="nivel-row">
+              <div class="nivel-row-label"><span class="nivel-pill nv-res">2</span></div>
+              <div class="nivel-row-comp">Apropio la discusión epistemológica del campo IS&amp;I identificando paradigmas de investigación y haciendo lectura crítica de los contextos y conceptos del área en relación con otras disciplinas.</div>
+            </div>
+            <div class="nivel-row">
+              <div class="nivel-row-label"><span class="nivel-pill nv-aut">3</span></div>
+              <div class="nivel-row-comp">Formulo un problema de investigación en IS&amp;I con alcance definido, estableciendo relaciones entre los conceptos teóricos que fundamentan el problema, los objetivos y la metodología de investigación seleccionada.</div>
+            </div>
+            <div class="nivel-row">
+              <div class="nivel-row-label"><span class="nivel-pill nv-est">4</span></div>
+              <div class="nivel-row-comp">Diseño y aplico la metodología de investigación apropiada al problema planteado en IS&amp;I, analizo datos con herramientas pertinentes al campo e interpreto resultados con criterio propio, identificando hallazgos y limitaciones.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Competencia 2 -->
+        <div style="background:#eef2ff;border-radius:10px;padding:14px 16px;margin:10px 0">
+          <p style="font-size:.83rem;font-weight:700;color:#1565c0;margin:0 0 6px">Competencia 2 · Investigación e Innovación</p>
+          <p style="font-size:.8rem;color:#2c3e50;margin:0 0 10px"><strong>Capacidad:</strong> Estética / Imaginación — Considera e interioriza otras formas de conocimiento y pensamiento para configurar comprensiones novedosas de los fenómenos tecnológicos en IS&amp;I, construyendo entornos de aprendizaje innovadores y colaborativos.</p>
+          <p style="font-size:.8rem;color:#2c3e50;margin:0 0 10px"><strong>Formulación:</strong> Implementa los resultados de la investigación en nuevas aplicaciones tecnológicas y sociales con el objetivo de transferir el conocimiento al entorno para que sea debidamente apropiado.</p>
+          <div class="nivel-rows">
+            <div class="nivel-row">
+              <div class="nivel-row-label"><span class="nivel-pill nv-res">2</span></div>
+              <div class="nivel-row-comp">Materializo el conocimiento en nuevas aplicaciones (teorías, modelos, metodologías, prototipos, patentes, modelos de utilidad, diseños industriales, registros de software, procesos técnicos y tecnológicos, empresas) con recursividad y concordancia con las capacidades del contexto.</div>
+            </div>
+            <div class="nivel-row">
+              <div class="nivel-row-label"><span class="nivel-pill nv-aut">3</span></div>
+              <div class="nivel-row-comp">Diseño y desarrollo, de forma detallada, la nueva aplicación con base en las plataformas técnicas y tecnológicas disponibles y los avances del conocimiento.</div>
+            </div>
+            <div class="nivel-row">
+              <div class="nivel-row-label"><span class="nivel-pill nv-est">4</span></div>
+              <div class="nivel-row-comp">Valido de forma experimental y contextual el nuevo desarrollo para verificar su viabilidad social y/o de mercado.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pfom-ev-row">
+          <div class="pfom-ev-group">
+            <strong>Evidencias</strong>
+            <div class="ev-chips">
+              <span class="ev-chip proyecto">Proyectos integradores</span>
+              <span class="ev-chip evidencia">Talleres</span>
+              <span class="ev-chip evidencia">Laboratorios</span>
+              <span class="ev-chip evidencia">Documentos escritos (artículos, informes)</span>
+              <span class="ev-chip proyecto">Producto desarrollado</span>
+            </div>
+          </div>
+          <div class="pfom-ev-group">
+            <strong>Cursos responsables</strong>
+            <div class="ev-chips">
+              <span class="ev-chip curso">Taller de Ingeniería en Sistemas e Informática</span>
+              <span class="ev-chip curso">Pensamiento Sistémico</span>
+              <span class="ev-chip curso">Proyecto Integrador I</span>
+              <span class="ev-chip curso">Proyecto Capstone</span>
+              <span class="ev-chip curso">Práctica Profesional</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EJE 2: ARTICULADOR DE FORMACIÓN EN TIC -->
+      <div class="pfom-area-card pfom-colaborativo">
+        <h4>💻 Articulador de Formación en TIC</h4>
+        <div class="pfom-desc">
+          <strong>Propósito:</strong> Posibilitar la flexibilidad y desterritorialización de los espacios, la demarcación de la noción convencional de tiempo, la disponibilidad de información, los lenguajes y recursos variados y convergentes, las características que impactan los procesos de indagación e investigación, las formas de lectura y escritura y las formas de enseñar, formar y aprender.<br><br>
+          <strong>Resultado de Aprendizaje General:</strong> Asume una posición crítica, responsable y ética en el uso de las tecnologías digitales como formas de comunicación y construcción de conocimiento, seleccionando las TIC apropiadas para resolver problemas del campo IS&amp;I y tomando decisiones fundamentadas a partir del análisis crítico de la información obtenida de fuentes digitales especializadas.
+        </div>
+
+        <!-- Competencia 1 -->
+        <div style="background:#e8f5e9;border-radius:10px;padding:14px 16px;margin:10px 0">
+          <p style="font-size:.83rem;font-weight:700;color:#2e7d32;margin:0 0 6px">Competencia 1 · Creatividad e innovación</p>
+          <p style="font-size:.8rem;color:#2c3e50;margin:0 0 10px"><strong>Capacidad:</strong> Estética / Imaginación — Considera e interioriza otras formas de pensamiento para generar ideas novedosas y originales mediadas por TIC, construyendo entornos de aprendizaje innovadores y colaborativos que trasciendan el entorno inmediato y configuren nuevas posibilidades en el campo IS&amp;I.</p>
+          <p style="font-size:.8rem;color:#2c3e50;margin:0 0 10px"><strong>Formulación:</strong> Identifica problemas o situaciones problemáticas que requieren investigación para la comprensión y apropiación del conocimiento a partir del empleo de herramientas TIC como fuentes de información especializadas y actuales.</p>
+          <div class="nivel-rows">
+            <div class="nivel-row">
+              <div class="nivel-row-label"><span class="nivel-pill nv-res">2</span></div>
+              <div class="nivel-row-comp">Analizo información o datos a través de la implementación de procesos referidos a la minería de datos.</div>
+            </div>
+            <div class="nivel-row">
+              <div class="nivel-row-label"><span class="nivel-pill nv-aut">3</span></div>
+              <div class="nivel-row-comp">Sistematizo información usando software libre y/o pago de análisis cuantitativo y cualitativo.</div>
+            </div>
+            <div class="nivel-row">
+              <div class="nivel-row-label"><span class="nivel-pill nv-est">4</span></div>
+              <div class="nivel-row-comp">Discuto resultados parciales o finales de investigación en grupos de discusión y redes académicas.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Competencia 2 -->
+        <div style="background:#e8f5e9;border-radius:10px;padding:14px 16px;margin:10px 0">
+          <p style="font-size:.83rem;font-weight:700;color:#2e7d32;margin:0 0 6px">Competencia 2 · Pensamiento crítico y toma de decisiones</p>
+          <p style="font-size:.8rem;color:#2c3e50;margin:0 0 10px"><strong>Capacidad:</strong> Ética y Vida / Autonomía — Actúa con libertad, independencia y responsabilidad en el uso de las TIC para tomar decisiones críticas y fundamentadas, y autogestiona su aprendizaje construyendo su identidad profesional como Ingeniero de Sistemas e Informática con ética digital y autonomía intelectual.</p>
+          <p style="font-size:.8rem;color:#2c3e50;margin:0 0 10px"><strong>Formulación:</strong> Selecciona las TIC apropiadas para resolver problemas del contexto, a partir del estudio de soluciones conceptuales y prácticas.</p>
+          <div class="nivel-rows">
+            <div class="nivel-row">
+              <div class="nivel-row-label"><span class="nivel-pill nv-res">2</span></div>
+              <div class="nivel-row-comp">Tomo decisiones acordes con la finalidad o necesidad a resolver a partir del uso creativo de la tecnología.</div>
+            </div>
+            <div class="nivel-row">
+              <div class="nivel-row-label"><span class="nivel-pill nv-aut">3</span></div>
+              <div class="nivel-row-comp">Propongo soluciones a los problemas a partir del análisis de la información obtenida de Internet y otras fuentes de consulta.</div>
+            </div>
+            <div class="nivel-row">
+              <div class="nivel-row-label"><span class="nivel-pill nv-est">4</span></div>
+              <div class="nivel-row-comp">Planifico a través de la utilización de TIC las actividades de abordaje y resolución de problemas.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pfom-ev-row">
+          <div class="pfom-ev-group">
+            <strong>Evidencias</strong>
+            <div class="ev-chips">
+              <span class="ev-chip proyecto">Proyectos integradores</span>
+              <span class="ev-chip evidencia">Talleres</span>
+              <span class="ev-chip evidencia">Laboratorios</span>
+              <span class="ev-chip evidencia">Documentos escritos (artículos, informes)</span>
+              <span class="ev-chip proyecto">Producto desarrollado</span>
+            </div>
+          </div>
+          <div class="pfom-ev-group">
+            <strong>Cursos responsables</strong>
+            <div class="ev-chips">
+              <span class="ev-chip curso">Taller de Ingeniería en Sistemas e Informática</span>
+              <span class="ev-chip curso">Pensamiento Sistémico</span>
+              <span class="ev-chip curso">Proyecto Integrador I</span>
+              <span class="ev-chip curso">Proyecto Capstone</span>
+              <span class="ev-chip curso">Práctica Profesional</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /chyc-pane ejes -->
+
+  </section>
+  <!-- ── fin MAPA CHYC ── -->
+
 </div><!-- /container -->
 
 <script>
@@ -1324,6 +2224,15 @@ minorTabs.forEach(tab => {
     document.querySelectorAll('.minor-pane').forEach(p => p.classList.remove('active'));
     tab.classList.add('active');
     const pane = document.getElementById('minor-' + tab.dataset.minor);
+    if (pane) pane.classList.add('active');
+  });
+});const chycTabs = document.querySelectorAll('.chyc-tab');
+chycTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    chycTabs.forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.chyc-pane').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    const pane = document.getElementById('chyc-' + tab.dataset.chyc);
     if (pane) pane.classList.add('active');
   });
 });
